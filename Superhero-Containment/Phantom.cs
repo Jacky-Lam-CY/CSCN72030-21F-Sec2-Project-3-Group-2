@@ -7,7 +7,7 @@
 
 using System;
 
-namespace PhantomModule_ColinSmith
+namespace SuperheroContainment
 {
     /*
     class Program
@@ -19,6 +19,7 @@ namespace PhantomModule_ColinSmith
     }
     */
 
+    // ****CAN ONLY MAKE AN OBJECT WITH ALL OF THEIR ATTRIBUTES HOP(STATUS, SENSITIVITY) MAKE IT SO YOU CAN CONFIGURE INDIVIUALLY HOP(STATUS)
     public class Phantom
     {
         int phantomStatus { get; set; }
