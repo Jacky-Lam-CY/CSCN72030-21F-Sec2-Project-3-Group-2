@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,80 +7,6 @@ using System.Threading.Tasks;
 
 namespace Superhero_Containment
 {
-    /*class DefenseA
-    {
-        bool isActive;
-        public Turret turret;
-        public AlertSystem alert;
-
-
-        public DefenseA()
-        {
-            Console.WriteLine("Defense Object Created!");
-            isActive = true;
-            turret = new();
-            alert = new();
-        }
-        public void toggleOn()
-        {
-            isActive = true;
-        }
-        public void toggleOff()
-        {
-            isActive = false;
-        }
-        public bool getActiveStatus()
-        {
-            return isActive;
-        }
-
-
-       
-        public class Turret
-        {
-            bool isActive;
-
-            public Turret()
-            {
-                isActive = true;
-                Console.WriteLine("Turret Object Created!");
-            }
-            public void toggleOn()
-            {
-                isActive = true;
-            }
-            public void toggleOff()
-            {
-                isActive = false;
-            }
-
-            class DurabilitySensor
-            {
-                bool isActive = true;
-
-                void toggleOn()
-                {
-                    isActive = true;
-                }
-                public void toggleOff()
-                {
-                    isActive = false;
-                }
-            }
-        }
-
-        internal class AlertSystem
-        {
-            bool isActive = true;
-
-            class Alarm
-            {
-                bool isActive = true;
-            }
-        }
-    }
-
-    */
     public abstract class Controller//Base Class
     {
         protected bool isActive;
@@ -118,29 +45,98 @@ namespace Superhero_Containment
 
         public class Turret : Controller
         {
-            public DurabilitySensor sensor;
+            public Weapon weapon1;
+            public Weapon weapon2;
             public Turret()
             {
                 Console.WriteLine("Turret Object Created!");
-                sensor = new();
+                weapon1 = new(1);
+                weapon2 = new(2);
             }
             public override bool getActiveStatus()
             {
                 Console.WriteLine("Turret Status");
                 return this.isActive;
             }
-
-
-            public class DurabilitySensor : Controller
+            public void routineOperation()
             {
-                public DurabilitySensor()
+                
+            }
+            public class Weapon: Controller
+            {
+                bool enable { get; }
+                public DurabilitySensor sensor;
+                
+                public Weapon(int weaponID)
                 {
-                    Console.WriteLine("DurabilitySensor Object Created!");
+                    Console.WriteLine("Weapon Object Created!");
+                    sensor = new(weaponID);
                 }
                 public override bool getActiveStatus()
                 {
-                    Console.WriteLine("DurabilitySensor Status");
+                    Console.WriteLine("Weapon Status");
                     return this.isActive;
+                }
+            }
+            public class DurabilitySensor : Controller
+            {
+                int durabilityValue;
+                string sensorFilePath;
+                StreamReader sr;
+                public DurabilitySensor(int sensorID)
+                {
+                    Console.WriteLine("DurabilitySensor Object Created!");
+                    Random rnd = new Random();
+                    durabilityValue = rnd.Next(50,101);
+                    sensorFilePath = @"..\..\..\Sensor" + sensorID.ToString() + ".txt";
+                    if (!File.Exists(sensorFilePath))//If data file does not exist, create one
+                    {
+                        createDataFile();
+                    }
+                    sr = File.OpenText(sensorFilePath);
+                }
+                public override bool getActiveStatus()
+                {
+                    Console.WriteLine("DurabilitySensor Status");                    
+                    return this.isActive;
+                }
+                public void detectDurabilityFromFile()
+                {
+                    if (getActiveStatus())
+                    {
+                        if (!File.Exists(sensorFilePath))//If data file does not exist, create one
+                        {
+                            createDataFile();
+                        }
+                        else
+                        {
+                            if(sr.Peek() == -1)
+                            {
+                                sr.BaseStream.Seek(0, SeekOrigin.Begin);
+                            }                                                       
+                            for (int i = 0; i < 100; i++)
+                            {
+                                
+                                durabilityValue = Int32.Parse(sr.ReadLine());
+                                Console.WriteLine(durabilityValue);//Log
+                            }
+                        }
+                    }
+                }
+                public void createDataFile()
+                {
+                    int[] value = new int[100];
+                    Random rnd = new Random();
+                    for (int i = 0; i < value.Length; i++)
+                    {
+                        value[i] = rnd.Next(0, 101);
+                    }
+                    StreamWriter sw = File.CreateText(sensorFilePath);
+                    foreach (int i in value)
+                    {
+                        sw.WriteLine(i);
+                    }
+                    sw.Close();
                 }
             }
         }

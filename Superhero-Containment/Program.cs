@@ -12,9 +12,14 @@ namespace Superhero_Containment
             Defense defense = new();
             defense.getActiveStatus();
             defense.turret.getActiveStatus();
-            defense.turret.sensor.getActiveStatus();
+            defense.turret.weapon1.getActiveStatus();
+            defense.turret.weapon1.sensor.getActiveStatus();
+            defense.turret.weapon2.getActiveStatus();
+            defense.turret.weapon2.sensor.getActiveStatus();
             defense.alert.getActiveStatus();
             defense.alert.alarm.getActiveStatus();
+            defense.turret.weapon2.sensor.detectDurabilityFromFile();
+            defense.turret.weapon2.sensor.detectDurabilityFromFile();
         }
     }
 }
