@@ -6,6 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Superhero-Containment", "Superhero-Containment\Superhero-Containment.csproj", "{F19FBBBC-BFFC-4B95-AD7B-746D70E3D77F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B7F2941-1DAB-4E7E-B6B7-F70E0FCDDBD0}"
+	ProjectSection(SolutionItems) = preProject
+		EOP.txt = EOP.txt
+		HOP.txt = HOP.txt
+		P.txt = P.txt
+		SOP.txt = SOP.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
