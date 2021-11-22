@@ -1,28 +1,21 @@
 ﻿// Colin Smith
 // CSCN72010 
 // Group 2
-// 
+
 // Super-hero Sontainment System
 // Phantom Module
 
 using System;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
 
 namespace SuperheroContainment
 {
-    /*
-    class Program
+    class Phantom // **Create a function to read from 3 different txt files (One for each of the objects) and initalize each object to the data from the txt
     {
-        static void Main(string[] args)
-        {
-
-        }
-    }
-    */
-
-    // ****CAN ONLY MAKE AN OBJECT WITH ALL OF THEIR ATTRIBUTES HOP(STATUS, SENSITIVITY) MAKE IT SO YOU CAN CONFIGURE INDIVIUALLY HOP(STATUS)
-    public class Phantom
-    {
-        int phantomStatus { get; set; }
+        public int phantomStatus { get; set; }
         public Phantom()
         {
             phantomStatus = 0;
@@ -32,55 +25,33 @@ namespace SuperheroContainment
         {
             this.phantomStatus = status;
         }
-        public string OnOff()
-        {
-            if (this.phantomStatus == 0)
-            {
-                return "Off"; // Display button as off
-            }
-            else
-                return "On"; // Display button as on
-        }
-
-        // Read from file and initialize the objects here 
     }
 
-    public class HOP
+    class HeartOfPhantom // Create a function to print object to a file
     {
-        int HOPStatus { get; set; }
-        int HOPsensitivity { get; set; }
+        public int HOPStatus { get; set; }
+        public int HOPsensitivity { get; set; }
 
-        public HOP()
+        public HeartOfPhantom()
         {
             HOPStatus = 0;
             HOPsensitivity = 0;
         }
 
-        public HOP(int status, int sensitivity)
+        public HeartOfPhantom(int status, int sensitivity)
         {
             this.HOPStatus = status;
             this.HOPsensitivity = sensitivity;
         }
-
-        public string OnOff()
-        {
-            if (this.HOPStatus == 0)
-            {
-                return "Off"; // Display button as off
-            }
-            else
-                return "On"; // Display button as on
-        }
-        // Print to file
     }
-    class EOP
+    class EyeOfPhantom // Create a function to print object to a file
     {
-        int EOPStatus { get; set; }
-        int EOPbrightness { get; set; }
-        int EOPviewingAngle { get; set; }
-        int EOPlight { get; set; }
+        public int EOPStatus { get; set; }
+        public int EOPbrightness { get; set; }
+        public int EOPviewingAngle { get; set; }
+        public int EOPlight { get; set; }
 
-        public EOP()
+        public EyeOfPhantom()
         {
             EOPStatus = 0;
             EOPbrightness = 0;
@@ -88,50 +59,30 @@ namespace SuperheroContainment
             EOPlight = 0;
         }
 
-        public EOP(int status, int brightness, int viewingAngle, int light)
+        public EyeOfPhantom(int status, int brightness, int viewingAngle, int light)
         {
             this.EOPStatus = status;
             this.EOPbrightness = brightness;
             this.EOPviewingAngle = viewingAngle;
             this.EOPlight = light;
         }
-        public string OnOff()
-        {
-            if (this.EOPStatus == 0)
-            {
-                return "Off"; // Display button as off
-            }
-            else
-                return "On"; // Display button as on
-        }
-        // Print to file
     }
 
-    class SOP
+    class SoulOfPhantom // Create a function to print object to a file
     {
-        int SOPStatus { get; set; }
-        double SOPCoveredArea { get; set; }
+        public int SOPStatus { get; set; }
+        public double SOPCoveredArea { get; set; }
 
-        public SOP()
+        public SoulOfPhantom()
         {
             SOPStatus = 0;
             SOPCoveredArea = 0.0;
         }
 
-        public SOP(int status, int coveredArea)
+        public SoulOfPhantom(int status, int coveredArea)
         {
             this.SOPStatus = status;
             this.SOPCoveredArea = coveredArea;
         }
-        public string OnOff()
-        {
-            if (this.SOPStatus == 0)
-            {
-                return "Off"; // Display button as off
-            }
-            else
-                return "On"; // Display button as on
-        }
-        // Print to file
     }
 }
