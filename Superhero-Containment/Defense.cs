@@ -77,68 +77,65 @@ namespace Superhero_Containment
                     Console.WriteLine("Weapon Status");
                     return this.isActive;
                 }
-            }
-            public class DurabilitySensor : Controller
-            {
-                int durabilityValue;
-                string sensorFilePath;
-                StreamReader sr;
-                public DurabilitySensor(int sensorID)
+                public class DurabilitySensor : Controller
                 {
-                    Console.WriteLine("DurabilitySensor Object Created!");
-                    Random rnd = new Random();
-                    durabilityValue = rnd.Next(50,101);
-                    sensorFilePath = @"..\..\..\Sensor" + sensorID.ToString() + ".txt";
-                    if (!File.Exists(sensorFilePath))//If data file does not exist, create one
+                    int durabilityValue;
+                    string sensorFilePath;
+                    StreamReader sr;
+                    public DurabilitySensor(int sensorID)
                     {
-                        createDataFile();
-                    }
-                    sr = File.OpenText(sensorFilePath);
-                }
-                public override bool getActiveStatus()
-                {
-                    Console.WriteLine("DurabilitySensor Status");                    
-                    return this.isActive;
-                }
-                public void detectDurabilityFromFile()
-                {
-                    if (getActiveStatus())
-                    {
+                        Console.WriteLine("DurabilitySensor Object Created!");
+                        Random rnd = new Random();
+                        durabilityValue = rnd.Next(50, 101);
+                        sensorFilePath = @"..\..\..\Sensor" + sensorID.ToString() + ".txt";
                         if (!File.Exists(sensorFilePath))//If data file does not exist, create one
                         {
                             createDataFile();
                         }
-                        else
+                        sr = File.OpenText(sensorFilePath);
+                    }
+                    public override bool getActiveStatus()
+                    {
+                        Console.WriteLine("DurabilitySensor Status");
+                        return this.isActive;
+                    }
+                    public void detectDurabilityFromFile()
+                    {
+                        if (getActiveStatus())
                         {
-                            if(sr.Peek() == -1)
+                            if (!File.Exists(sensorFilePath))//If data file does not exist, create one
                             {
-                                sr.BaseStream.Seek(0, SeekOrigin.Begin);
-                            }                                                       
-                            for (int i = 0; i < 100; i++)
+                                createDataFile();
+                            }
+                            else
                             {
-                                
-                                durabilityValue = Int32.Parse(sr.ReadLine());
-                                Console.WriteLine(durabilityValue);//Log
+                                if (sr.Peek() == -1)
+                                {
+                                    sr.BaseStream.Seek(0, SeekOrigin.Begin);
+                                }
+                                    durabilityValue = Int32.Parse(sr.ReadLine());
+                                    Console.WriteLine(durabilityValue);//Log                                
                             }
                         }
                     }
-                }
-                public void createDataFile()
-                {
-                    int[] value = new int[100];
-                    Random rnd = new Random();
-                    for (int i = 0; i < value.Length; i++)
+                    public void createDataFile()
                     {
-                        value[i] = rnd.Next(0, 101);
+                        int[] value = new int[100];
+                        Random rnd = new Random();
+                        for (int i = 0; i < value.Length; i++)
+                        {
+                            value[i] = rnd.Next(0, 101);
+                        }
+                        StreamWriter sw = File.CreateText(sensorFilePath);
+                        foreach (int i in value)
+                        {
+                            sw.WriteLine(i);
+                        }
+                        sw.Close();
                     }
-                    StreamWriter sw = File.CreateText(sensorFilePath);
-                    foreach (int i in value)
-                    {
-                        sw.WriteLine(i);
-                    }
-                    sw.Close();
                 }
             }
+            
         }
         public class AlertSystem : Controller
         {
