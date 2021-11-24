@@ -14,6 +14,8 @@ namespace Superhero_Containment_UI
         protected bool isActive;
         protected bool isError;
 
+        
+
         public Controller()
         {
             Console.WriteLine("Controller Object Created!");
