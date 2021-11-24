@@ -1,0 +1,11 @@
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\bin\Debug\SuperpowerSuppression.exe.config
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\bin\Debug\SuperpowerSuppression.exe
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\bin\Debug\SuperpowerSuppression.pdb
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\obj\Debug\SuperpowerSuppression.csproj.AssemblyReference.cache
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\obj\Debug\SuperpowerSuppression.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\obj\Debug\SuperpowerSuppression.Form1.resources
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\obj\Debug\SuperpowerSuppression.Properties.Resources.resources
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\obj\Debug\SuperpowerSuppression.csproj.GenerateResource.cache
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\obj\Debug\SuperpowerSuppression.csproj.CoreCompileInputs.cache
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\obj\Debug\SuperpowerSuppression.exe
+C:\Users\Cole\source\repos\SuperpowerSuppression\SuperpowerSuppression\obj\Debug\SuperpowerSuppression.pdb
