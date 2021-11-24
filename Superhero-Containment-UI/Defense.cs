@@ -55,16 +55,44 @@ namespace Superhero_Containment_UI
         {
             public Weapon primary;
             public Weapon secondary;
+
+            string configFilePath;
             public Turret()
             {
                 Console.WriteLine("Turret Object Created!");
                 primary = new Weapon(1);
                 secondary = new Weapon(2);
+                configFilePath = @"..\..\defenseConfig.txt";
             }
             public override bool getActiveStatus()
             {
                 Console.WriteLine("Turret Status");
                 return this.isActive;
+            }
+            public void saveDefenseConfig()
+            {
+                if (!File.Exists(configFilePath))//If data file does not exist, create one
+                {
+                    StreamWriter sw = File.CreateText(configFilePath);
+                    sw.WriteLine(primary.getDurabilityThresholdValue());
+                    sw.WriteLine(secondary.getDurabilityThresholdValue());
+                    sw.Close();
+                }
+            }
+            public bool loadDefenseConfig()
+            {
+                if (!File.Exists(configFilePath))//If data file does not exist, create one
+                {
+                    return false;
+                }
+                else
+                {
+                    StreamReader sr = File.OpenText(configFilePath);
+                    primary.setDurabilityThresholdValue(Int32.Parse(sr.ReadLine()));
+                    secondary.setDurabilityThresholdValue(Int32.Parse(sr.ReadLine()));
+                    sr.Close();
+                    return true;
+                }
             }
             public void operate()
             {
@@ -73,7 +101,6 @@ namespace Superhero_Containment_UI
             }
             public class Weapon: Controller
             {
-                bool enable { get; }
                 int durabilityValue;
                 int durabilityThresholdValue;
                 public DurabilitySensor sensor;
@@ -176,8 +203,7 @@ namespace Superhero_Containment_UI
                         sw.Close();
                     }
                 }
-            }
-            
+            }          
         }
         public class AlertSystem : Controller
         {
@@ -186,10 +212,11 @@ namespace Superhero_Containment_UI
 
             const int numOfEvents = 5;
             int[] alertEvents;
-            string[] alertEventsName = {"Power Generator Module",
-                                        "Air Filter Module",
-                                        "Network Connection",
-                                        ""};
+            string[] alertEventsName = {"Module 1",
+                                        "Module 2",
+                                        "Module 3",
+                                        "Module 4",
+                                        "Module 5"};
             
             public Alarm alarm;
             public AlertSystem()
