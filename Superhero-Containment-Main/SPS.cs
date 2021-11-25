@@ -10,7 +10,10 @@ namespace Superhero_Containment_Main
     {
         const string TELEKINESIS_DATA_PATH = @"..\SPS_Files\telekinesis_data.txt";
         const string STRENGTH_DATA_PATH = @"..\SPS_Files\strength_data.txt";
-
+        
+        public Speaker speaker_object = new Speaker();
+        public StrengthNullifier strength_object = new StrengthNullifier();
+        public TelekinesisStick telekinesis_object = new TelekinesisStick();
     }
     public class Speaker
     {
