@@ -16,7 +16,7 @@ namespace Superhero_Containment_Main
         //Add Object Here
         Defense defense;
         SPS sps;
-
+        
         Thread alarmThread;
 
         public Main()
@@ -155,6 +155,19 @@ namespace Superhero_Containment_Main
             Application.Exit();
         }
 
-        
+        private void controlPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
