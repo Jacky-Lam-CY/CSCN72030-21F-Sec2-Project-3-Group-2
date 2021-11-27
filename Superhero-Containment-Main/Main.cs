@@ -155,17 +155,17 @@ namespace Superhero_Containment_Main
             Application.Exit();
         }
 
-        private void controlPanel_Paint(object sender, PaintEventArgs e)
+        private void groupBox_defw1_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void def_tur_w2_verBarFront_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void label11_Click(object sender, EventArgs e)
+        private void def_tur_w1_verBarFront_Paint(object sender, PaintEventArgs e)
         {
 
         }

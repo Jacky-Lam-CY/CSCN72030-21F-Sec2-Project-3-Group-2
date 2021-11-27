@@ -78,13 +78,7 @@ namespace Superhero_Containment_Main
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -93,10 +87,10 @@ namespace Superhero_Containment_Main
             this.def_tur_w2_verBarBack.SuspendLayout();
             this.groupBox_defw1.SuspendLayout();
             this.def_tur_w1_verBarBack.SuspendLayout();
-            this.DNFGroup.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.SPS_module_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // defenseGroup
@@ -308,6 +302,7 @@ namespace Superhero_Containment_Main
             this.def_tur_w2_verBarFront.Name = "def_tur_w2_verBarFront";
             this.def_tur_w2_verBarFront.Size = new System.Drawing.Size(21, 96);
             this.def_tur_w2_verBarFront.TabIndex = 1;
+            this.def_tur_w2_verBarFront.Paint += new System.Windows.Forms.PaintEventHandler(this.def_tur_w2_verBarFront_Paint);
             // 
             // groupBox_defw1
             // 
@@ -320,6 +315,7 @@ namespace Superhero_Containment_Main
             this.groupBox_defw1.TabIndex = 0;
             this.groupBox_defw1.TabStop = false;
             this.groupBox_defw1.Text = "Weapon: Primary";
+            this.groupBox_defw1.Enter += new System.EventHandler(this.groupBox_defw1_Enter);
             // 
             // def_tur_w1_label
             // 
@@ -348,6 +344,7 @@ namespace Superhero_Containment_Main
             this.def_tur_w1_verBarFront.Name = "def_tur_w1_verBarFront";
             this.def_tur_w1_verBarFront.Size = new System.Drawing.Size(21, 96);
             this.def_tur_w1_verBarFront.TabIndex = 1;
+            this.def_tur_w1_verBarFront.Paint += new System.Windows.Forms.PaintEventHandler(this.def_tur_w1_verBarFront_Paint);
             // 
             // def_StatusLight
             // 
@@ -378,6 +375,7 @@ namespace Superhero_Containment_Main
             // 
             // phantomGroup
             // 
+            this.phantomGroup.Controls.Add(this.pictureBox1);
             this.phantomGroup.Location = new System.Drawing.Point(12, 12);
             this.phantomGroup.Name = "phantomGroup";
             this.phantomGroup.Size = new System.Drawing.Size(920, 215);
@@ -563,70 +561,22 @@ namespace Superhero_Containment_Main
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickFrequency = 5;
             // 
-            // button2
+            // panel1
             // 
-            this.button2.Location = new System.Drawing.Point(38, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Toggle Door Open/Closed";
-            this.button2.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Location = new System.Drawing.Point(885, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(12, 12);
+            this.panel1.TabIndex = 3;
             // 
-            // button3
+            // label6
             // 
-            this.button3.Location = new System.Drawing.Point(724, 56);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Run Floor Sensor";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(47, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Door Status:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(130, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Default";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(44, 111);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 13);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Floor Sensor Sensitivity :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(182, 111);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Default";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(732, 97);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Data Shown Here";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(822, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Status: ON";
             // 
             // Main
             // 
@@ -658,13 +608,12 @@ namespace Superhero_Containment_Main
             this.groupBox_defw1.ResumeLayout(false);
             this.groupBox_defw1.PerformLayout();
             this.def_tur_w1_verBarBack.ResumeLayout(false);
-            this.DNFGroup.ResumeLayout(false);
-            this.DNFGroup.PerformLayout();
             this.controlPanel.ResumeLayout(false);
             this.controlPanel.PerformLayout();
             this.SPS_module_box.ResumeLayout(false);
             this.SPS_module_box.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -719,13 +668,6 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label11;
     }
 }
 
