@@ -47,7 +47,6 @@ namespace Superhero_Containment_Main
             this.def_alert_eventStatusLight5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.def_tur_StatusLight = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox_defw2 = new System.Windows.Forms.GroupBox();
             this.def_tur_w2_label = new System.Windows.Forms.Label();
             this.def_tur_w2_verBarBack = new System.Windows.Forms.Panel();
@@ -58,6 +57,7 @@ namespace Superhero_Containment_Main
             this.def_tur_w1_verBarFront = new System.Windows.Forms.Panel();
             this.def_StatusLight = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.phantomGroup = new System.Windows.Forms.GroupBox();
             this.DNFGroup = new System.Windows.Forms.GroupBox();
             this.controlPanel = new System.Windows.Forms.Panel();
@@ -70,14 +70,15 @@ namespace Superhero_Containment_Main
             this.DNF_module_timer = new System.Windows.Forms.Timer(this.components);
             this.SPS_module_timer = new System.Windows.Forms.Timer(this.components);
             this.SPS_module_box = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -86,9 +87,11 @@ namespace Superhero_Containment_Main
             this.def_tur_w2_verBarBack.SuspendLayout();
             this.groupBox_defw1.SuspendLayout();
             this.def_tur_w1_verBarBack.SuspendLayout();
+            this.phantomGroup.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.SPS_module_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // defenseGroup
@@ -261,16 +264,6 @@ namespace Superhero_Containment_Main
             this.def_tur_StatusLight.Size = new System.Drawing.Size(12, 12);
             this.def_tur_StatusLight.TabIndex = 9;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(185, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "0";
-            // 
             // groupBox_defw2
             // 
             this.groupBox_defw2.Controls.Add(this.def_tur_w2_label);
@@ -310,6 +303,7 @@ namespace Superhero_Containment_Main
             this.def_tur_w2_verBarFront.Name = "def_tur_w2_verBarFront";
             this.def_tur_w2_verBarFront.Size = new System.Drawing.Size(21, 96);
             this.def_tur_w2_verBarFront.TabIndex = 1;
+            this.def_tur_w2_verBarFront.Paint += new System.Windows.Forms.PaintEventHandler(this.def_tur_w2_verBarFront_Paint);
             // 
             // groupBox_defw1
             // 
@@ -322,6 +316,7 @@ namespace Superhero_Containment_Main
             this.groupBox_defw1.TabIndex = 0;
             this.groupBox_defw1.TabStop = false;
             this.groupBox_defw1.Text = "Weapon: Primary";
+            this.groupBox_defw1.Enter += new System.EventHandler(this.groupBox_defw1_Enter);
             // 
             // def_tur_w1_label
             // 
@@ -350,6 +345,7 @@ namespace Superhero_Containment_Main
             this.def_tur_w1_verBarFront.Name = "def_tur_w1_verBarFront";
             this.def_tur_w1_verBarFront.Size = new System.Drawing.Size(21, 96);
             this.def_tur_w1_verBarFront.TabIndex = 1;
+            this.def_tur_w1_verBarFront.Paint += new System.Windows.Forms.PaintEventHandler(this.def_tur_w1_verBarFront_Paint);
             // 
             // def_StatusLight
             // 
@@ -368,8 +364,19 @@ namespace Superhero_Containment_Main
             this.label1.TabIndex = 0;
             this.label1.Text = "Status: ON";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(185, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(14, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "0";
+            // 
             // phantomGroup
             // 
+            this.phantomGroup.Controls.Add(this.pictureBox1);
             this.phantomGroup.Location = new System.Drawing.Point(12, 12);
             this.phantomGroup.Name = "phantomGroup";
             this.phantomGroup.Size = new System.Drawing.Size(920, 215);
@@ -468,6 +475,23 @@ namespace Superhero_Containment_Main
             this.SPS_module_box.TabStop = false;
             this.SPS_module_box.Text = "Superpower Suppression Module";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Location = new System.Drawing.Point(885, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(12, 12);
+            this.panel1.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(822, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Status: ON";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -530,22 +554,13 @@ namespace Superhero_Containment_Main
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickFrequency = 5;
             // 
-            // panel1
+            // pictureBox1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(885, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12, 12);
-            this.panel1.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(822, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Status: ON";
+            this.pictureBox1.Location = new System.Drawing.Point(409, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -577,11 +592,13 @@ namespace Superhero_Containment_Main
             this.groupBox_defw1.ResumeLayout(false);
             this.groupBox_defw1.PerformLayout();
             this.def_tur_w1_verBarBack.ResumeLayout(false);
+            this.phantomGroup.ResumeLayout(false);
             this.controlPanel.ResumeLayout(false);
             this.controlPanel.PerformLayout();
             this.SPS_module_box.ResumeLayout(false);
             this.SPS_module_box.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -636,6 +653,7 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -24,7 +24,7 @@ namespace Superhero_Containment_Main
         }
         public void printPdata()
         {
-            StreamWriter sw = new StreamWriter(@"C:\Users\colin\OneDrive\Desktop\CSCN72030-21F-Sec2-Project-3-Group-2\P.txt");
+            StreamWriter sw = new StreamWriter(@"..\..\data\P.txt");
             sw.WriteLine(this.phantomStatus);
 
             sw.Close();
@@ -32,7 +32,7 @@ namespace Superhero_Containment_Main
         public void readPdata()
         {
             string stat;
-            StreamReader sr = new StreamReader(@"C:\Users\colin\OneDrive\Desktop\CSCN72030-21F-Sec2-Project-3-Group-2\P.txt");
+            StreamReader sr = new StreamReader(@"..\..\data\P.txt");
             stat = sr.ReadLine();
 
             this.phantomStatus = Int32.Parse(stat);
@@ -59,7 +59,7 @@ namespace Superhero_Containment_Main
         }
         public void printHOPdata()
         {
-            StreamWriter sw = new StreamWriter(@"C:\Users\colin\OneDrive\Desktop\CSCN72030-21F-Sec2-Project-3-Group-2\HOP.txt");
+            StreamWriter sw = new StreamWriter(@"..\..\data\HOP.txt");
             sw.WriteLine(this.HOPstatus);
             sw.WriteLine(this.HOPsensitivity);
 
@@ -68,7 +68,7 @@ namespace Superhero_Containment_Main
         public void readHOPdata()
         {
             string stat, sens;
-            StreamReader sr = new StreamReader(@"C:\Users\colin\OneDrive\Desktop\CSCN72030-21F-Sec2-Project-3-Group-2\HOP.txt");
+            StreamReader sr = new StreamReader(@"..\..\data\HOP.txt");
             stat = sr.ReadLine();
             sens = sr.ReadLine();
 
@@ -103,7 +103,7 @@ namespace Superhero_Containment_Main
         }
         public void printEOPdata()
         {
-            StreamWriter sw = new StreamWriter(@"C:\Users\colin\OneDrive\Desktop\CSCN72030-21F-Sec2-Project-3-Group-2\EOP.txt");
+            StreamWriter sw = new StreamWriter(@"..\..\data\EOP.txt");
             sw.WriteLine(this.EOPstatus);
             sw.WriteLine(this.EOPbrightness);
             sw.WriteLine(this.EOPviewingAngle);
@@ -114,7 +114,7 @@ namespace Superhero_Containment_Main
         public void readEOPdata()
         {
             string stat, bright, view, light;
-            StreamReader sr = new StreamReader(@"C:\Users\colin\OneDrive\Desktop\CSCN72030-21F-Sec2-Project-3-Group-2\EOP.txt");
+            StreamReader sr = new StreamReader(@"..\..\data\EOP.txt");
             stat = sr.ReadLine();
             bright = sr.ReadLine();
             view = sr.ReadLine();
@@ -132,12 +132,12 @@ namespace Superhero_Containment_Main
     class SoulOfPhantom 
     {
         public int SOPstatus { get; set; }
-        public double SOPcoveredArea { get; set; }
+        public int SOPcoveredArea { get; set; }
 
         public SoulOfPhantom()
         {
             SOPstatus = 0;
-            SOPcoveredArea = 0.0;
+            SOPcoveredArea = 0;
         }
 
         public SoulOfPhantom(int status, int coveredArea)
@@ -147,7 +147,7 @@ namespace Superhero_Containment_Main
         }
         public void printSOPdata()
         {
-            StreamWriter sw = new StreamWriter(@"C:\Users\colin\OneDrive\Desktop\CSCN72030-21F-Sec2-Project-3-Group-2\SOP.txt");
+            StreamWriter sw = new StreamWriter(@"..\..\data\SOP.txt");
             sw.WriteLine(this.SOPstatus);
             sw.WriteLine(this.SOPcoveredArea);
        
@@ -156,7 +156,7 @@ namespace Superhero_Containment_Main
         public void readSOPdata()
         {
             string stat, area;
-            StreamReader sr = new StreamReader(@"C:\Users\colin\OneDrive\Desktop\CSCN72030-21F-Sec2-Project-3-Group-2\SOP.txt");
+            StreamReader sr = new StreamReader(@"..\..\data\SOP.txt");
             stat = sr.ReadLine();
             area = sr.ReadLine();
 
