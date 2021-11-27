@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Defense.cs" />
+    <Compile Include="Phantom.cs" />
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
