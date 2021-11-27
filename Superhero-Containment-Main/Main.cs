@@ -155,6 +155,19 @@ namespace Superhero_Containment_Main
             Application.Exit();
         }
 
-        
+        private void groupBox_defw1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void def_tur_w2_verBarFront_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void def_tur_w1_verBarFront_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
