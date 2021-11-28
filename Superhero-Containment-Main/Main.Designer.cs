@@ -75,7 +75,8 @@ namespace Superhero_Containment_Main
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.DNFGroup = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -121,8 +122,7 @@ namespace Superhero_Containment_Main
             this.panel7 = new System.Windows.Forms.Panel();
             this.sps_module_status = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -582,7 +582,6 @@ namespace Superhero_Containment_Main
             // 
             this.DNFGroup.Controls.Add(this.label26);
             this.DNFGroup.Controls.Add(this.label25);
-            this.DNFGroup.Controls.Add(this.button3);
             this.DNFGroup.Controls.Add(this.label17);
             this.DNFGroup.Controls.Add(this.label16);
             this.DNFGroup.Controls.Add(this.label15);
@@ -596,19 +595,28 @@ namespace Superhero_Containment_Main
             this.DNFGroup.TabStop = false;
             this.DNFGroup.Text = "Doors and Floors Module";
             // 
-            // button3
+            // label26
             // 
-            this.button3.Location = new System.Drawing.Point(693, 77);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 26);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Check Floor Sensor";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(180, 96);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(41, 13);
+            this.label26.TabIndex = 9;
+            this.label26.Text = "Default";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(33, 96);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(80, 13);
+            this.label25.TabIndex = 8;
+            this.label25.Text = "Humidity Value:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(815, 152);
+            this.label17.Location = new System.Drawing.Point(512, 43);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 13);
             this.label17.TabIndex = 6;
@@ -617,12 +625,11 @@ namespace Superhero_Containment_Main
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(699, 152);
+            this.label16.Location = new System.Drawing.Point(372, 43);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(99, 13);
             this.label16.TabIndex = 5;
             this.label16.Text = "Floor Sensor Value:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -1054,23 +1061,11 @@ namespace Superhero_Containment_Main
             this.label24.TabIndex = 2;
             this.label24.Text = "Status: ON";
             // 
-            // label25
+            // timer1
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(33, 96);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(80, 13);
-            this.label25.TabIndex = 8;
-            this.label25.Text = "Humidity Value:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(180, 96);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(41, 13);
-            this.label26.TabIndex = 9;
-            this.label26.Text = "Default";
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Main
             // 
@@ -1198,7 +1193,6 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox SPS_module_box;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1226,6 +1220,7 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

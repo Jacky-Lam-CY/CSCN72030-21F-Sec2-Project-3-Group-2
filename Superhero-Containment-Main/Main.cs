@@ -16,7 +16,7 @@ namespace Superhero_Containment_Main
         //Add Object Here
         Defense defense;
         SPS sps;
-
+        DoorsNFloors DNF;
         Thread alarmThread;
 
         Phantom p = new Phantom();
@@ -29,6 +29,8 @@ namespace Superhero_Containment_Main
             //Initialize Object Here
             defense = new Defense();
             sps = new SPS();
+            DNF = new DoorsNFloors();
+
             alarmThread = new Thread(new ThreadStart(() => defense.alert.alarm.playSystemAlarm()));
             InitializeComponent();            
         }
@@ -92,7 +94,13 @@ namespace Superhero_Containment_Main
         }
         private void initializeDNFModuleData()
         {
+
             //Add code here
+            //Add Code Here
+            DNF.isOpen = false;
+            DNF.humidityVal = 50;
+            DNF.flagVal = DNF.flagAverage;
+            DNF.weightVal = DNF.averageWeight;
         }
         private void initializeDefenseModuleData()
         {
@@ -190,6 +198,30 @@ namespace Superhero_Containment_Main
         private void DNF_module_timer_Tick(object sender, EventArgs e)
         {
             //Add Code Here
+
+            if(DNF.isOpen == true)
+            {
+                label13.Text = "Door is Open";
+            }
+            else
+            {
+                label13.Text = "Door is Closed";
+            }
+
+           if(DNF.weightVal == DNF.averageWeight)
+            {
+                label15.Text = "Average";
+            }
+           else if(DNF.weightVal == DNF.lightWeight)
+            {
+                label15.Text = "Light";
+            }
+           else if(DNF.weightVal == DNF.heavyWeight)
+            {
+                label15.Text = "Heavy";
+            }
+
+            label26.Text = DNF.humidityVal.ToString() + "%";
         }
         //--------------------Defense Module Code--------------------
         private void defense_module_timer_Tick(object sender, EventArgs e)//Monitor and Display of data
@@ -253,7 +285,7 @@ namespace Superhero_Containment_Main
         //--------------------Control Button Code--------------------
         private void configButton_Click(object sender, EventArgs e)
         {
-            Settings setting = new Settings(ref defense, ref sps);
+            Settings setting = new Settings(ref defense, ref sps, ref DNF);
 
             setting.ShowDialog();
         }
@@ -264,14 +296,14 @@ namespace Superhero_Containment_Main
             Application.Exit();
         }
 
-        private void label16_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
+            string getValue = "";
+          
 
-        }
+            DNF.runFloors(ref getValue);
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            label17.Text = getValue;
         }
     }
 }

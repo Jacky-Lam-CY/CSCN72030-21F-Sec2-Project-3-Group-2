@@ -6,15 +6,18 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Superhero_Containment
+namespace Superhero_Containment_Main
 {
-    class DoorsNFloors
+    public class DoorsNFloors
     {
+        StreamReader sr = File.OpenText(@"..\..\FloorSensor.txt");
 
         //variable declarations
         public bool isOpen = false;
+        public bool doorsEnabled = false;
 
         public int humidityVal;
+        public int tempHumidity;
 
         public double lightWeight = 0.7;
         public double averageWeight = 1.0;
@@ -68,17 +71,19 @@ namespace Superhero_Containment
 
         }
 
-        public void runFloors()
+        public void runFloors(ref string getF)
         {
-
+            if (sr.Peek() == -1)
+            {
+                sr = File.OpenText(@"..\..\FloorSensor.txt");
+            }
 
 
 
             //for every line in the datafile
-            foreach (string line in System.IO.File.ReadLines(@"C:\Users\jpden\source\repos\CSCN72030-21F-Sec2-Project-3-Group-2\FloorSensor.txt"))
-            {
-                //convert string to double
-                double tempVal = Convert.ToDouble(line);
+
+            //convert string to double
+            double tempVal = Convert.ToDouble(sr.ReadLine());
 
                 //determine the multiplier needed and apply
                 if (weightVal == lightWeight)
@@ -94,19 +99,20 @@ namespace Superhero_Containment
                     tempVal = tempVal * heavyWeight;
                 }
                 //If sensor is not calibrated yet
-                else if (weightVal == 0)
-                {
-                    Console.WriteLine("Sensor not calibrated.");
-                    break;
-                }
+                //else if (weightVal == 0)
+                //{
+                  //  Console.WriteLine("Sensor not calibrated.");
+                    //break;
+                //}
 
                 //round to 2 decimal places
                 tempVal = Math.Round(tempVal, 2);
 
-                Console.WriteLine(tempVal);
+                getF = tempVal.ToString();
+                //Console.WriteLine(tempVal);
                 //pause half a second in between outputting each new line
-                Thread.Sleep(500);
-            }
+        
+            
 
         }
 

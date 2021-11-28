@@ -15,16 +15,20 @@ namespace Superhero_Containment_Main
         //Add object here
         Defense defense;
         SPS sps;
+        DoorsNFloors DoorsNF;
+
         Phantom p = new Phantom();
         HeartOfPhantom HOP = new HeartOfPhantom();
         EyeOfPhantom EOP = new EyeOfPhantom();
         SoulOfPhantom SOP = new SoulOfPhantom();
         
         bool isChanged;
-        public Settings(ref Defense def, ref SPS s)//Pass reference of your object
+        public Settings(ref Defense def, ref SPS s, ref DoorsNFloors DNF)//Pass reference of your object
         {
             defense = def;
             sps = s;
+            DoorsNF = DNF;
+            
             InitializeComponent();           
         }
 
@@ -34,6 +38,7 @@ namespace Superhero_Containment_Main
             loadDefenseModuleSettings();
             loadPhantomModuleSettings();
             loadSPSModuleSettings();
+            loadDNFModuleSettings();
             isChanged = false;
             applyButton.Enabled = false;
         }
@@ -85,6 +90,41 @@ namespace Superhero_Containment_Main
         private void loadDNFModuleSettings()
         {
             //Add Code Here
+            
+            
+            //Slider position
+            trackBar6.Value = DoorsNF.humidityVal;
+
+            //Temp humidity set
+            DoorsNF.tempHumidity = trackBar6.Value;
+            //Slider label
+            label26.Text = DoorsNF.tempHumidity.ToString();
+            //Current humidity
+            label25.Text = DoorsNF.humidityVal.ToString();
+
+            if (DoorsNF.weightVal == DoorsNF.averageWeight)
+            {
+                label27.Text = "Average";
+            }
+            else if (DoorsNF.weightVal == DoorsNF.lightWeight)
+            {
+                label27.Text = "Light";
+            }
+            else if (DoorsNF.weightVal == DoorsNF.heavyWeight)
+            {
+                label27.Text = "Heavy";
+            }
+
+            if(DoorsNF.isOpen == true)
+            {
+                label29.Text = "Open";
+            }
+            else
+            {
+                label29.Text = "Closed";
+            }
+
+
         }
         private void loadSPSModuleSettings()
         {
@@ -407,6 +447,60 @@ namespace Superhero_Containment_Main
 
         //--------------------DNF Module Code--------------------
 
+        //Humidity bar
+        private void trackBar6_Scroll(object sender, EventArgs e)
+        {
+            label26.Text = trackBar6.Value.ToString();
+            DoorsNF.tempHumidity = trackBar6.Value;
+        }
+
+        //Set humidity button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DoorsNF.humidityVal = DoorsNF.tempHumidity;
+            label25.Text = DoorsNF.humidityVal.ToString();
+        }
+        //Light weight sensitivity
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DoorsNF.flagVal = DoorsNF.flagLight;
+            DoorsNF.weightVal = DoorsNF.lightWeight;
+            label27.Text = "Light";
+        }
+
+        //Average weight sensitivity
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DoorsNF.flagVal = DoorsNF.flagAverage;
+            DoorsNF.weightVal = DoorsNF.averageWeight;
+            label27.Text = "Average";
+        }
+
+        //Heavy weight sensitivity
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DoorsNF.flagVal = DoorsNF.flagHeavy;
+            DoorsNF.weightVal = DoorsNF.heavyWeight;
+            label27.Text = "Heavy";
+        }
+
+        //Door toggle
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (DoorsNF.isOpen == true)
+            {
+                label29.Text = "Closed";
+                DoorsNF.isOpen = false;
+            }
+            else
+            {
+                label29.Text = "Open";
+                DoorsNF.isOpen = true;
+            }
+        }
+
+
+
         //--------------------Defense Module Code--------------------
         private void def_on_CheckedChanged(object sender, EventArgs e)
         {
@@ -585,10 +679,19 @@ namespace Superhero_Containment_Main
             defense.turret.secondary.setDurabilityThresholdValue(trackBar_def_w2_dt.Value);
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
+    
 
-        }
+
+
+
+
+
+
+
+
+
+
+
         //--------------------End--------------------
     }
 }
