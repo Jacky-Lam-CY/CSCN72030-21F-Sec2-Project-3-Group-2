@@ -166,7 +166,7 @@ namespace Superhero_Containment_Main
                 {
                     sps.strength_object.readStrengthData();
                     str_status.BackColor = Color.Lime;
-                    this.strength_value_lbl.Text = sps.strength_object.getTotalStrength().ToString();
+                    this.strength_value_lbl.Text = sps.strength_object.getTotalStrength().ToString() + " kJ";
                     this.lbl_str_percent_main.Text = sps.strength_object.getCurrentPower().ToString() + "%";
                 }
                 if (sps.speaker_object.getEnabled())
@@ -185,7 +185,7 @@ namespace Superhero_Containment_Main
             }
 
         }
-    
+        
         //--------------------DNF Module Code--------------------
         private void DNF_module_timer_Tick(object sender, EventArgs e)
         {

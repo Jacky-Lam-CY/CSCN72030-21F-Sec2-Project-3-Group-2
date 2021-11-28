@@ -74,7 +74,7 @@ namespace Superhero_Containment_Main
             this.sps_autoset_btn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.str_live_lbl = new System.Windows.Forms.Label();
             this.Strength_Disabled_Button = new System.Windows.Forms.RadioButton();
             this.Strength_Enabled_Button = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
@@ -125,6 +125,7 @@ namespace Superhero_Containment_Main
             this.def_on = new System.Windows.Forms.RadioButton();
             this.cancelButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
+            this.str_percent_lbl = new System.Windows.Forms.Label();
             this.appControl.SuspendLayout();
             this.tabPage_phantom.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -669,10 +670,11 @@ namespace Superhero_Containment_Main
             // 
             // strength_box
             // 
+            this.strength_box.Controls.Add(this.str_percent_lbl);
             this.strength_box.Controls.Add(this.sps_autoset_btn);
             this.strength_box.Controls.Add(this.label7);
             this.strength_box.Controls.Add(this.label6);
-            this.strength_box.Controls.Add(this.label8);
+            this.strength_box.Controls.Add(this.str_live_lbl);
             this.strength_box.Controls.Add(this.Strength_Disabled_Button);
             this.strength_box.Controls.Add(this.Strength_Enabled_Button);
             this.strength_box.Controls.Add(this.label9);
@@ -688,7 +690,7 @@ namespace Superhero_Containment_Main
             // 
             // sps_autoset_btn
             // 
-            this.sps_autoset_btn.Location = new System.Drawing.Point(271, 74);
+            this.sps_autoset_btn.Location = new System.Drawing.Point(356, 74);
             this.sps_autoset_btn.Name = "sps_autoset_btn";
             this.sps_autoset_btn.Size = new System.Drawing.Size(75, 23);
             this.sps_autoset_btn.TabIndex = 9;
@@ -716,14 +718,14 @@ namespace Superhero_Containment_Main
             this.label6.TabIndex = 7;
             this.label6.Text = "0%";
             // 
-            // label8
+            // str_live_lbl
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(400, 23);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "0 kJ";
+            this.str_live_lbl.AutoSize = true;
+            this.str_live_lbl.Location = new System.Drawing.Point(400, 23);
+            this.str_live_lbl.Name = "str_live_lbl";
+            this.str_live_lbl.Size = new System.Drawing.Size(31, 13);
+            this.str_live_lbl.TabIndex = 6;
+            this.str_live_lbl.Text = "0 kJ";
             // 
             // Strength_Disabled_Button
             // 
@@ -1290,6 +1292,15 @@ namespace Superhero_Containment_Main
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
+            // str_percent_lbl
+            // 
+            this.str_percent_lbl.AutoSize = true;
+            this.str_percent_lbl.Location = new System.Drawing.Point(258, 79);
+            this.str_percent_lbl.Name = "str_percent_lbl";
+            this.str_percent_lbl.Size = new System.Drawing.Size(23, 13);
+            this.str_percent_lbl.TabIndex = 10;
+            this.str_percent_lbl.Text = "0%";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1401,7 +1412,7 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Button sps_autoset_btn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label str_live_lbl;
         private System.Windows.Forms.RadioButton Strength_Disabled_Button;
         private System.Windows.Forms.RadioButton Strength_Enabled_Button;
         private System.Windows.Forms.Label label9;
@@ -1454,5 +1465,6 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label str_percent_lbl;
     }
 }

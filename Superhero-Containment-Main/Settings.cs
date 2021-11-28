@@ -99,6 +99,9 @@ namespace Superhero_Containment_Main
                     Speaker_Enabled_button.Checked = true;
                     Speaker_Disabled_button.Checked = false;
                     speaker_box.Enabled = true;
+                    volume_bar.Value = sps.speaker_object.getVolume();
+                    Volume_slider_lbl.Text = sps.speaker_object.getVolume().ToString() + "%";
+                    Volume_Amount_lbl.Text = sps.speaker_object.getVolume().ToString() + "%";
                 }
                 if (sps.telekinesis_object.getEnabled())
                 {
@@ -111,6 +114,9 @@ namespace Superhero_Containment_Main
                     Strength_Enabled_Button.Checked = true;
                     Strength_Disabled_Button.Checked = false;
                     strength_box.Enabled = true;
+                    Strength_bar.Value = sps.strength_object.getCurrentPower();
+                    str_percent_lbl.Text = sps.strength_object.getCurrentPower().ToString().ToString() + "%";
+                    this.str_live_lbl.Text = sps.strength_object.getTotalStrength().ToString() + " kJ";
                 }
             }
         }
@@ -326,9 +332,11 @@ namespace Superhero_Containment_Main
         private void Auto_Set_Button_Clicked(object sender, EventArgs e)
         {
             Strength_bar.Value = Convert.ToInt32((sps.strength_object.getTotalStrength() / 3000.00) * 100);
+            str_percent_lbl.Text = Strength_bar.Value.ToString() + "%";
             isChanged = true;
             applyButton.Enabled = true;
         }
+       
         private void Speaker_Enabled_button_Clicked(object sender, EventArgs e) //Speaker Section
         {
             Speaker_Enabled_button.Checked = true;
