@@ -148,6 +148,15 @@ namespace Superhero_Containment_Main
                     TK_Enabled_button.Checked = true;
                     TK_Disabled_button.Checked = false;
                     telekinesis_box.Enabled = true;
+                    if (sps.telekinesis_object.getLastPoked() != 0)
+                    {
+                        tk_queue_dropdown.SelectedIndex = sps.telekinesis_object.getLastPoked() - 1;
+                    }
+                    if(sps.telekinesis_object.getActiveCell() != 0)
+                    {
+                        this.tk_lastcell_settings_lbl.Text = "Cell " + sps.telekinesis_object.getActiveCell().ToString();
+                    }
+                    
                 }
                 if (sps.strength_object.getEnabled())
                 {
@@ -155,7 +164,7 @@ namespace Superhero_Containment_Main
                     Strength_Disabled_Button.Checked = false;
                     strength_box.Enabled = true;
                     Strength_bar.Value = sps.strength_object.getCurrentPower();
-                    str_percent_lbl.Text = sps.strength_object.getCurrentPower().ToString().ToString() + "%";
+                    str_percent_lbl.Text = sps.strength_object.getCurrentPower().ToString() + "%";
                     this.str_live_lbl.Text = sps.strength_object.getTotalStrength().ToString() + " kJ";
                 }
             }
@@ -287,6 +296,22 @@ namespace Superhero_Containment_Main
 
         //--------------------SPS Module Code--------------------
         /**     Cole's SPS Module Code within our windows Form1.cs  **/
+        private void SPS_live_updates_Tick(object sender, EventArgs e)
+        {
+            //updates SPS live values every 1 second
+             if (sps.getEnabled())
+             {
+                 if (sps.strength_object.getEnabled())
+                 {
+                     str_live_lbl.Text = sps.strength_object.getTotalStrength().ToString() + " kJ";
+                 }
+                 if (sps.telekinesis_object.getEnabled() && sps.telekinesis_object.getActiveCell() != 0)
+                 {
+                     tk_lastcell_settings_lbl.Text = "Cell " + sps.telekinesis_object.getActiveCell().ToString();
+                 }
+            }
+            
+        }
         private void Module_Enabled_button_Clicked(object sender, EventArgs e)
         {
             applyButton.Enabled = true;
@@ -350,6 +375,7 @@ namespace Superhero_Containment_Main
         }
         private void Str_Bar_Value_Changed(object sender, EventArgs e)
         {
+            str_percent_lbl.Text = Strength_bar.Value.ToString() + "%";
             isChanged = true;
             applyButton.Enabled = true;
         }
@@ -408,7 +434,7 @@ namespace Superhero_Containment_Main
 
         private void volume_bar_ValueChanged(object sender, EventArgs e)
         {
-            Volume_slider_lbl.Text = volume_bar.Value.ToString();
+            Volume_slider_lbl.Text = volume_bar.Value.ToString() + "%";
             applyButton.Enabled = true;
             isChanged = true;
 
@@ -443,6 +469,13 @@ namespace Superhero_Containment_Main
             }
 
         }
+        private void TK_Queue_btn_clicked(object sender, EventArgs e)
+        {
+            sps.telekinesis_object.queueCell(Convert.ToInt32(tk_queue_dropdown.SelectedItem));
+            applyButton.Enabled = true;
+            isChanged = true;
+        }
+       
         /**     SPS Module Form Code End        **/
 
         //--------------------DNF Module Code--------------------
@@ -619,6 +652,7 @@ namespace Superhero_Containment_Main
             if (SPS_Enabled_Button.Checked)
             {
                 sps.setEnabled(true);
+                SPS_live_updates.Enabled = true;
                 if (Speaker_Enabled_button.Checked)
                 {
                     sps.speaker_object.setEnabled(true);
@@ -632,14 +666,25 @@ namespace Superhero_Containment_Main
                 {
                     sps.strength_object.setEnabled(true);
                     sps.strength_object.setCurrentPower(Strength_bar.Value);
-
+                    this.str_live_lbl.Text = sps.strength_object.getTotalStrength().ToString() + " kJ";
                 }
                 else { sps.strength_object.setEnabled(false); }
                 if (TK_Enabled_button.Checked)
                 {
                     sps.telekinesis_object.setEnabled(true);
+                    this.tk_lastcell_settings_lbl.Text = "Cell " + sps.telekinesis_object.getActiveCell().ToString();
+                    int activeCell = sps.telekinesis_object.getActiveCell();
+                    if (activeCell != 0 && activeCell == sps.telekinesis_object.dequeueCell())
+                    {
+                        sps.telekinesis_object.setLastPoked(activeCell);
+                        sps.telekinesis_object.setActiveCell(0); //represents poking of cell, now no more activity
+                    }
                 }
-                else { sps.telekinesis_object.setEnabled(false); }
+                else 
+                { 
+                    sps.telekinesis_object.setEnabled(false);
+                    SPS_live_updates.Enabled = false;
+                }
             }
         }
         private void applyDNFModuleSettingsChange()
@@ -679,13 +724,7 @@ namespace Superhero_Containment_Main
             defense.turret.secondary.setDurabilityThresholdValue(trackBar_def_w2_dt.Value);
         }
 
-    
-
-
-
-
-
-
+        
 
 
 

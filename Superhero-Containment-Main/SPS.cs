@@ -47,15 +47,40 @@ namespace Superhero_Containment_Main
     }
     public class TelekinesisStick
     {
-        private int selectedCell;
+        private Queue<int> queuedCells = new Queue<int>();
+        private int activeCell = 0;
+        private int lastPokedCell = 0;
         private int textFileIndex = 0;
-        public void setSelectedCell(int cell)
+        public void queueCell(int cell)
         {
-            this.selectedCell = cell;
+            this.queuedCells.Enqueue(cell);
         }
-        public int getSelectedCell()
+        public int dequeueCell()
         {
-            return this.selectedCell;
+            if (this.queuedCells.Count > 0)
+            {
+                return this.queuedCells.Dequeue();
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public int getActiveCell()
+        {
+            return this.activeCell;
+        }
+        public void setActiveCell(int cell)
+        {
+            this.activeCell = cell;
+        }
+        public int getLastPoked()
+        {
+            return this.lastPokedCell;
+        }
+        public void setLastPoked(int value)
+        {
+            this.lastPokedCell = value;
         }
         private Boolean enabled = false;
         public void setEnabled(Boolean value)
@@ -70,7 +95,7 @@ namespace Superhero_Containment_Main
         {
             string path = @"..\..\data\telekinesis_data.txt";
             string[] lines = System.IO.File.ReadAllLines(path);
-            this.selectedCell = Convert.ToInt32(lines[this.textFileIndex]);
+            this.activeCell = Convert.ToInt32(lines[this.textFileIndex]);
             this.textFileIndex++;
             if (this.textFileIndex == lines.Length - 1)
             {

@@ -167,21 +167,62 @@ namespace Superhero_Containment_Main
                 sps_module_status.BackColor = Color.Lime;
                 if (sps.telekinesis_object.getEnabled())
                 {
-                    sps.telekinesis_object.readTelekinesisData();
                     tk_status.BackColor = Color.Lime;
+                    if(sps.telekinesis_object.getActiveCell() == 0)
+                    {
+                        tk_undetected_lbl.Visible = true;
+                        tk_detected_lbl1.Visible = false; tk_detected_lbl2.Visible = false; tk_detected_lbl3.Visible = false;
+
+                        sps.telekinesis_object.readTelekinesisData();
+                    }
+                    else
+                    {
+                        tk_undetected_lbl.Visible = false;
+                        tk_detected_lbl1.Visible = true; tk_detected_lbl2.Visible = true; tk_detected_lbl3.Visible = true;
+                        tk_detected_lbl3.Text = "Cell " + sps.telekinesis_object.getActiveCell().ToString();
+                    }
+                    if (sps.telekinesis_object.getLastPoked() != 0)
+                    {
+                        tk_last_lbl.Text = "Cell " + sps.telekinesis_object.getLastPoked().ToString();
+                    }
+                }
+                else
+                {
+                    sps_module_status.BackColor = Color.Gray;
+                    tk_undetected_lbl.Visible = false;
+                    tk_detected_lbl1.Visible = false; tk_detected_lbl2.Visible = false; tk_detected_lbl3.Visible = false;
                 }
                 if (sps.strength_object.getEnabled())
                 {
                     sps.strength_object.readStrengthData();
                     str_status.BackColor = Color.Lime;
+                    strength_value_lbl.Visible = true;
                     this.strength_value_lbl.Text = sps.strength_object.getTotalStrength().ToString() + " kJ";
                     this.lbl_str_percent_main.Text = sps.strength_object.getCurrentPower().ToString() + "%";
+                    str_panel.BackColor = Color.Lime;
+                    //update size bar here
+                    str_panel.Location = new Point(-136 + sps.strength_object.getCurrentPower(), 1);
+                }
+                else
+                {
+                    str_status.BackColor = Color.Gray;
+                    str_panel.BackColor = Color.Gray;
+                    strength_value_lbl.Visible = false;
                 }
                 if (sps.speaker_object.getEnabled())
-                {
-                    speaker_status.BackColor = Color.Lime;
+                { 
+                    speaker_status.BackColor = Color.Lime; 
+                    lbl_volume_main.Visible = true;
                     this.lbl_volume_main.Text = sps.speaker_object.getVolume().ToString() + "%";
-
+                    speaker_panel.BackColor = Color.Lime;
+                    //update bar size here
+                    speaker_panel.Location = new Point(1, 98 - sps.speaker_object.getVolume());
+                }
+                else
+                {
+                    speaker_status.BackColor = Color.Gray;
+                    speaker_panel.BackColor = Color.Gray;
+                    lbl_volume_main.Visible = false;
                 }
             }
             else

@@ -100,7 +100,6 @@ namespace Superhero_Containment_Main
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.SPS_module_box = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tk_status = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -119,10 +118,16 @@ namespace Superhero_Containment_Main
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.speaker_panel = new System.Windows.Forms.Panel();
             this.sps_module_status = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label27 = new System.Windows.Forms.Label();
+            this.tk_detected_lbl1 = new System.Windows.Forms.Label();
+            this.tk_detected_lbl2 = new System.Windows.Forms.Label();
+            this.tk_detected_lbl3 = new System.Windows.Forms.Label();
+            this.tk_undetected_lbl = new System.Windows.Forms.Label();
+            this.tk_last_lbl = new System.Windows.Forms.Label();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -816,46 +821,22 @@ namespace Superhero_Containment_Main
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.tk_last_lbl);
+            this.groupBox6.Controls.Add(this.tk_undetected_lbl);
+            this.groupBox6.Controls.Add(this.tk_detected_lbl3);
+            this.groupBox6.Controls.Add(this.tk_detected_lbl2);
+            this.groupBox6.Controls.Add(this.tk_detected_lbl1);
+            this.groupBox6.Controls.Add(this.label27);
             this.groupBox6.Controls.Add(this.tk_status);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Location = new System.Drawing.Point(515, 19);
+            this.groupBox6.Location = new System.Drawing.Point(645, 19);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(244, 190);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Telekinesis Stick";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
-            this.comboBox1.Location = new System.Drawing.Point(156, 123);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(41, 21);
-            this.comboBox1.TabIndex = 7;
             // 
             // tk_status
             // 
@@ -868,7 +849,7 @@ namespace Superhero_Containment_Main
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(170, 21);
+            this.label6.Location = new System.Drawing.Point(171, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 4;
@@ -877,11 +858,11 @@ namespace Superhero_Containment_Main
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 22);
+            this.label18.Location = new System.Drawing.Point(23, 29);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(35, 13);
+            this.label18.Size = new System.Drawing.Size(112, 13);
             this.label18.TabIndex = 1;
-            this.label18.Text = "label4";
+            this.label18.Text = "Telekinesis Detection:";
             // 
             // groupBox7
             // 
@@ -892,7 +873,7 @@ namespace Superhero_Containment_Main
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.panel9);
-            this.groupBox7.Location = new System.Drawing.Point(209, 19);
+            this.groupBox7.Location = new System.Drawing.Point(339, 19);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(302, 190);
@@ -940,7 +921,7 @@ namespace Superhero_Containment_Main
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(222, 22);
+            this.label20.Location = new System.Drawing.Point(223, 21);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(40, 13);
             this.label20.TabIndex = 4;
@@ -967,7 +948,7 @@ namespace Superhero_Containment_Main
             // 
             // str_panel
             // 
-            this.str_panel.BackColor = System.Drawing.Color.White;
+            this.str_panel.BackColor = System.Drawing.Color.Gray;
             this.str_panel.Location = new System.Drawing.Point(1, 1);
             this.str_panel.Margin = new System.Windows.Forms.Padding(2);
             this.str_panel.Name = "str_panel";
@@ -981,10 +962,10 @@ namespace Superhero_Containment_Main
             this.groupBox8.Controls.Add(this.label22);
             this.groupBox8.Controls.Add(this.label23);
             this.groupBox8.Controls.Add(this.panel6);
-            this.groupBox8.Location = new System.Drawing.Point(6, 19);
+            this.groupBox8.Location = new System.Drawing.Point(109, 19);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(182, 190);
+            this.groupBox8.Size = new System.Drawing.Size(226, 190);
             this.groupBox8.TabIndex = 5;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Speaker Device";
@@ -1010,7 +991,7 @@ namespace Superhero_Containment_Main
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(109, 22);
+            this.label22.Location = new System.Drawing.Point(110, 21);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(40, 13);
             this.label22.TabIndex = 4;
@@ -1029,25 +1010,25 @@ namespace Superhero_Containment_Main
             // 
             this.panel6.BackColor = System.Drawing.Color.Gray;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.speaker_panel);
             this.panel6.Location = new System.Drawing.Point(141, 74);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(10, 100);
             this.panel6.TabIndex = 0;
             // 
-            // panel7
+            // speaker_panel
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(-1, 1);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 96);
-            this.panel7.TabIndex = 1;
+            this.speaker_panel.BackColor = System.Drawing.Color.White;
+            this.speaker_panel.Location = new System.Drawing.Point(-1, 100);
+            this.speaker_panel.Margin = new System.Windows.Forms.Padding(2);
+            this.speaker_panel.Name = "speaker_panel";
+            this.speaker_panel.Size = new System.Drawing.Size(10, 96);
+            this.speaker_panel.TabIndex = 1;
             // 
             // sps_module_status
             // 
             this.sps_module_status.BackColor = System.Drawing.Color.Gray;
-            this.sps_module_status.Location = new System.Drawing.Point(884, 19);
+            this.sps_module_status.Location = new System.Drawing.Point(81, 35);
             this.sps_module_status.Name = "sps_module_status";
             this.sps_module_status.Size = new System.Drawing.Size(12, 12);
             this.sps_module_status.TabIndex = 3;
@@ -1055,7 +1036,7 @@ namespace Superhero_Containment_Main
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(821, 19);
+            this.label24.Location = new System.Drawing.Point(18, 35);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(59, 13);
             this.label24.TabIndex = 2;
@@ -1066,6 +1047,71 @@ namespace Superhero_Containment_Main
             this.timer1.Enabled = true;
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(23, 144);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(84, 13);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Last Poked Cell:";
+            // 
+            // tk_detected_lbl1
+            // 
+            this.tk_detected_lbl1.AutoSize = true;
+            this.tk_detected_lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tk_detected_lbl1.ForeColor = System.Drawing.Color.Firebrick;
+            this.tk_detected_lbl1.Location = new System.Drawing.Point(23, 58);
+            this.tk_detected_lbl1.Name = "tk_detected_lbl1";
+            this.tk_detected_lbl1.Size = new System.Drawing.Size(205, 16);
+            this.tk_detected_lbl1.TabIndex = 9;
+            this.tk_detected_lbl1.Text = "Telekinetic Activity Detected";
+            this.tk_detected_lbl1.Visible = false;
+            // 
+            // tk_detected_lbl2
+            // 
+            this.tk_detected_lbl2.AutoSize = true;
+            this.tk_detected_lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tk_detected_lbl2.ForeColor = System.Drawing.Color.Firebrick;
+            this.tk_detected_lbl2.Location = new System.Drawing.Point(27, 86);
+            this.tk_detected_lbl2.Name = "tk_detected_lbl2";
+            this.tk_detected_lbl2.Size = new System.Drawing.Size(66, 15);
+            this.tk_detected_lbl2.TabIndex = 10;
+            this.tk_detected_lbl2.Text = "Location:";
+            this.tk_detected_lbl2.Visible = false;
+            // 
+            // tk_detected_lbl3
+            // 
+            this.tk_detected_lbl3.AutoSize = true;
+            this.tk_detected_lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tk_detected_lbl3.ForeColor = System.Drawing.Color.Firebrick;
+            this.tk_detected_lbl3.Location = new System.Drawing.Point(95, 81);
+            this.tk_detected_lbl3.Name = "tk_detected_lbl3";
+            this.tk_detected_lbl3.Size = new System.Drawing.Size(86, 25);
+            this.tk_detected_lbl3.TabIndex = 11;
+            this.tk_detected_lbl3.Text = "Cell 13";
+            this.tk_detected_lbl3.Visible = false;
+            // 
+            // tk_undetected_lbl
+            // 
+            this.tk_undetected_lbl.AutoSize = true;
+            this.tk_undetected_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tk_undetected_lbl.Location = new System.Drawing.Point(48, 71);
+            this.tk_undetected_lbl.Name = "tk_undetected_lbl";
+            this.tk_undetected_lbl.Size = new System.Drawing.Size(133, 15);
+            this.tk_undetected_lbl.TabIndex = 12;
+            this.tk_undetected_lbl.Text = "No Activity Detected";
+            this.tk_undetected_lbl.Visible = false;
+            // 
+            // tk_last_lbl
+            // 
+            this.tk_last_lbl.AutoSize = true;
+            this.tk_last_lbl.Location = new System.Drawing.Point(116, 144);
+            this.tk_last_lbl.Name = "tk_last_lbl";
+            this.tk_last_lbl.Size = new System.Drawing.Size(33, 13);
+            this.tk_last_lbl.TabIndex = 13;
+            this.tk_last_lbl.Text = "None";
             // 
             // Main
             // 
@@ -1196,7 +1242,6 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox SPS_module_box;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel tk_status;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label18;
@@ -1215,12 +1260,18 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel speaker_panel;
         private System.Windows.Forms.Panel sps_module_status;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label tk_last_lbl;
+        private System.Windows.Forms.Label tk_undetected_lbl;
+        private System.Windows.Forms.Label tk_detected_lbl3;
+        private System.Windows.Forms.Label tk_detected_lbl2;
+        private System.Windows.Forms.Label tk_detected_lbl1;
+        private System.Windows.Forms.Label label27;
     }
 }
 

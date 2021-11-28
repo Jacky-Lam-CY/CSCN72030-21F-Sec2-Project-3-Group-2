@@ -29,6 +29,7 @@ namespace Superhero_Containment_Main
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.okButton = new System.Windows.Forms.Button();
             this.appControl = new System.Windows.Forms.TabControl();
             this.tabPage_phantom = new System.Windows.Forms.TabPage();
@@ -67,9 +68,13 @@ namespace Superhero_Containment_Main
             this.tabPage_SPS = new System.Windows.Forms.TabPage();
             this.SPS_module_box = new System.Windows.Forms.GroupBox();
             this.telekinesis_box = new System.Windows.Forms.GroupBox();
+            this.tk_lastcell_settings_lbl = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tk_queue_btn = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
             this.TK_Disabled_button = new System.Windows.Forms.RadioButton();
             this.TK_Enabled_button = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tk_queue_dropdown = new System.Windows.Forms.ComboBox();
             this.strength_box = new System.Windows.Forms.GroupBox();
             this.str_percent_lbl = new System.Windows.Forms.Label();
             this.sps_autoset_btn = new System.Windows.Forms.Button();
@@ -102,6 +107,7 @@ namespace Superhero_Containment_Main
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.trackBar6 = new System.Windows.Forms.TrackBar();
             this.button1 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -131,7 +137,7 @@ namespace Superhero_Containment_Main
             this.def_on = new System.Windows.Forms.RadioButton();
             this.cancelButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
-            this.trackBar6 = new System.Windows.Forms.TrackBar();
+            this.SPS_live_updates = new System.Windows.Forms.Timer(this.components);
             this.appControl.SuspendLayout();
             this.tabPage_phantom.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -154,6 +160,7 @@ namespace Superhero_Containment_Main
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
             this.tabPage_defense.SuspendLayout();
             this.groupBox_defense.SuspendLayout();
             this.def_alert_group.SuspendLayout();
@@ -163,7 +170,6 @@ namespace Superhero_Containment_Main
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w2_dt)).BeginInit();
             this.def_w1_group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w1_dt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -609,9 +615,13 @@ namespace Superhero_Containment_Main
             // 
             // telekinesis_box
             // 
+            this.telekinesis_box.Controls.Add(this.tk_lastcell_settings_lbl);
+            this.telekinesis_box.Controls.Add(this.label31);
+            this.telekinesis_box.Controls.Add(this.tk_queue_btn);
+            this.telekinesis_box.Controls.Add(this.label30);
             this.telekinesis_box.Controls.Add(this.TK_Disabled_button);
             this.telekinesis_box.Controls.Add(this.TK_Enabled_button);
-            this.telekinesis_box.Controls.Add(this.comboBox1);
+            this.telekinesis_box.Controls.Add(this.tk_queue_dropdown);
             this.telekinesis_box.Enabled = false;
             this.telekinesis_box.Location = new System.Drawing.Point(6, 289);
             this.telekinesis_box.Name = "telekinesis_box";
@@ -620,12 +630,49 @@ namespace Superhero_Containment_Main
             this.telekinesis_box.TabStop = false;
             this.telekinesis_box.Text = "Telekinesis Stick";
             // 
+            // tk_lastcell_settings_lbl
+            // 
+            this.tk_lastcell_settings_lbl.AutoSize = true;
+            this.tk_lastcell_settings_lbl.Location = new System.Drawing.Point(357, 54);
+            this.tk_lastcell_settings_lbl.Name = "tk_lastcell_settings_lbl";
+            this.tk_lastcell_settings_lbl.Size = new System.Drawing.Size(30, 13);
+            this.tk_lastcell_settings_lbl.TabIndex = 15;
+            this.tk_lastcell_settings_lbl.Text = "N/A";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(233, 23);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(128, 13);
+            this.label31.TabIndex = 14;
+            this.label31.Text = "Activity Last Seen in:";
+            // 
+            // tk_queue_btn
+            // 
+            this.tk_queue_btn.Location = new System.Drawing.Point(199, 52);
+            this.tk_queue_btn.Name = "tk_queue_btn";
+            this.tk_queue_btn.Size = new System.Drawing.Size(75, 23);
+            this.tk_queue_btn.TabIndex = 13;
+            this.tk_queue_btn.Text = "Queue";
+            this.tk_queue_btn.UseVisualStyleBackColor = true;
+            this.tk_queue_btn.Click += new System.EventHandler(this.TK_Queue_btn_clicked);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(15, 57);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(121, 13);
+            this.label30.TabIndex = 12;
+            this.label30.Text = "Queue Cell to Poke:";
+            // 
             // TK_Disabled_button
             // 
             this.TK_Disabled_button.AutoSize = true;
             this.TK_Disabled_button.Checked = true;
             this.TK_Disabled_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.TK_Disabled_button.Location = new System.Drawing.Point(6, 51);
+            this.TK_Disabled_button.Location = new System.Drawing.Point(84, 23);
             this.TK_Disabled_button.Name = "TK_Disabled_button";
             this.TK_Disabled_button.Size = new System.Drawing.Size(74, 19);
             this.TK_Disabled_button.TabIndex = 11;
@@ -638,7 +685,7 @@ namespace Superhero_Containment_Main
             // 
             this.TK_Enabled_button.AutoSize = true;
             this.TK_Enabled_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.TK_Enabled_button.Location = new System.Drawing.Point(6, 23);
+            this.TK_Enabled_button.Location = new System.Drawing.Point(7, 23);
             this.TK_Enabled_button.Name = "TK_Enabled_button";
             this.TK_Enabled_button.Size = new System.Drawing.Size(71, 19);
             this.TK_Enabled_button.TabIndex = 10;
@@ -646,10 +693,10 @@ namespace Superhero_Containment_Main
             this.TK_Enabled_button.UseVisualStyleBackColor = true;
             this.TK_Enabled_button.Click += new System.EventHandler(this.TK_Enabled_button_Clicked);
             // 
-            // comboBox1
+            // tk_queue_dropdown
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.tk_queue_dropdown.FormattingEnabled = true;
+            this.tk_queue_dropdown.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -670,10 +717,10 @@ namespace Superhero_Containment_Main
             "18",
             "19",
             "20"});
-            this.comboBox1.Location = new System.Drawing.Point(198, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(41, 21);
-            this.comboBox1.TabIndex = 6;
+            this.tk_queue_dropdown.Location = new System.Drawing.Point(142, 54);
+            this.tk_queue_dropdown.Name = "tk_queue_dropdown";
+            this.tk_queue_dropdown.Size = new System.Drawing.Size(51, 21);
+            this.tk_queue_dropdown.TabIndex = 6;
             // 
             // strength_box
             // 
@@ -706,7 +753,7 @@ namespace Superhero_Containment_Main
             // 
             // sps_autoset_btn
             // 
-            this.sps_autoset_btn.Location = new System.Drawing.Point(356, 74);
+            this.sps_autoset_btn.Location = new System.Drawing.Point(339, 74);
             this.sps_autoset_btn.Name = "sps_autoset_btn";
             this.sps_autoset_btn.Size = new System.Drawing.Size(75, 23);
             this.sps_autoset_btn.TabIndex = 9;
@@ -827,11 +874,12 @@ namespace Superhero_Containment_Main
             // Volume_Amount_lbl
             // 
             this.Volume_Amount_lbl.AutoSize = true;
-            this.Volume_Amount_lbl.Location = new System.Drawing.Point(368, 26);
+            this.Volume_Amount_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Volume_Amount_lbl.Location = new System.Drawing.Point(363, 47);
             this.Volume_Amount_lbl.Name = "Volume_Amount_lbl";
-            this.Volume_Amount_lbl.Size = new System.Drawing.Size(14, 13);
+            this.Volume_Amount_lbl.Size = new System.Drawing.Size(31, 18);
             this.Volume_Amount_lbl.TabIndex = 8;
-            this.Volume_Amount_lbl.Text = "0";
+            this.Volume_Amount_lbl.Text = "0%";
             // 
             // Speaker_Disabled_button
             // 
@@ -862,7 +910,7 @@ namespace Superhero_Containment_Main
             // Current_Volume_text
             // 
             this.Current_Volume_text.AutoSize = true;
-            this.Current_Volume_text.Location = new System.Drawing.Point(213, 26);
+            this.Current_Volume_text.Location = new System.Drawing.Point(233, 22);
             this.Current_Volume_text.Name = "Current_Volume_text";
             this.Current_Volume_text.Size = new System.Drawing.Size(93, 13);
             this.Current_Volume_text.TabIndex = 5;
@@ -1035,6 +1083,15 @@ namespace Superhero_Containment_Main
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Climate Settings";
+            // 
+            // trackBar6
+            // 
+            this.trackBar6.Location = new System.Drawing.Point(9, 81);
+            this.trackBar6.Maximum = 100;
+            this.trackBar6.Name = "trackBar6";
+            this.trackBar6.Size = new System.Drawing.Size(436, 45);
+            this.trackBar6.TabIndex = 6;
+            this.trackBar6.Scroll += new System.EventHandler(this.trackBar6_Scroll);
             // 
             // button1
             // 
@@ -1359,14 +1416,10 @@ namespace Superhero_Containment_Main
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
-            // trackBar6
+            // SPS_live_updates
             // 
-            this.trackBar6.Location = new System.Drawing.Point(9, 81);
-            this.trackBar6.Maximum = 100;
-            this.trackBar6.Name = "trackBar6";
-            this.trackBar6.Size = new System.Drawing.Size(436, 45);
-            this.trackBar6.TabIndex = 6;
-            this.trackBar6.Scroll += new System.EventHandler(this.trackBar6_Scroll);
+            this.SPS_live_updates.Interval = 1000;
+            this.SPS_live_updates.Tick += new System.EventHandler(this.SPS_live_updates_Tick);
             // 
             // Settings
             // 
@@ -1416,6 +1469,7 @@ namespace Superhero_Containment_Main
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
             this.tabPage_defense.ResumeLayout(false);
             this.groupBox_defense.ResumeLayout(false);
             this.groupBox_defense.PerformLayout();
@@ -1431,7 +1485,6 @@ namespace Superhero_Containment_Main
             this.def_w1_group.ResumeLayout(false);
             this.def_w1_group.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w1_dt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1490,7 +1543,7 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.GroupBox telekinesis_box;
         private System.Windows.Forms.RadioButton TK_Disabled_button;
         private System.Windows.Forms.RadioButton TK_Enabled_button;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox tk_queue_dropdown;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
@@ -1541,5 +1594,10 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TrackBar trackBar6;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button tk_queue_btn;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label tk_lastcell_settings_lbl;
+        private System.Windows.Forms.Timer SPS_live_updates;
     }
 }
