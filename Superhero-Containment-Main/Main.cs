@@ -233,5 +233,10 @@ namespace Superhero_Containment_Main
             defense.turret.saveDefenseConfig();
             Application.Exit();
         }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

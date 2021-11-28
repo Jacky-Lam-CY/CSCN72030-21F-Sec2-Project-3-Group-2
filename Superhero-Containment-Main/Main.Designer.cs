@@ -93,6 +93,14 @@ namespace Superhero_Containment_Main
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -107,6 +115,7 @@ namespace Superhero_Containment_Main
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.DNFGroup.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.SPS_module_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -544,6 +553,14 @@ namespace Superhero_Containment_Main
             // 
             // DNFGroup
             // 
+            this.DNFGroup.Controls.Add(this.button3);
+            this.DNFGroup.Controls.Add(this.label17);
+            this.DNFGroup.Controls.Add(this.label16);
+            this.DNFGroup.Controls.Add(this.button2);
+            this.DNFGroup.Controls.Add(this.label15);
+            this.DNFGroup.Controls.Add(this.label14);
+            this.DNFGroup.Controls.Add(this.label13);
+            this.DNFGroup.Controls.Add(this.label12);
             this.DNFGroup.Location = new System.Drawing.Point(12, 454);
             this.DNFGroup.Name = "DNFGroup";
             this.DNFGroup.Size = new System.Drawing.Size(920, 215);
@@ -712,6 +729,79 @@ namespace Superhero_Containment_Main
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickFrequency = 5;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(33, 43);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Door Status:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(180, 43);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Default";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(33, 153);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 13);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Floor Sensor Sensitivity";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(180, 153);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Default";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(18, 80);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(255, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Toggle Door Open/Closed";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(699, 152);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(99, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Floor Sensor Value:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(815, 152);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(57, 13);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Sensor Off";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(693, 77);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(188, 26);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Check Floor Sensor";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -753,6 +843,8 @@ namespace Superhero_Containment_Main
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.DNFGroup.ResumeLayout(false);
+            this.DNFGroup.PerformLayout();
             this.controlPanel.ResumeLayout(false);
             this.controlPanel.PerformLayout();
             this.SPS_module_box.ResumeLayout(false);
@@ -826,6 +918,14 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label17;
     }
 }
 
