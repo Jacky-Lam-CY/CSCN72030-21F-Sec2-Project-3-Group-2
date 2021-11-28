@@ -16,7 +16,7 @@ namespace Superhero_Containment_Main
         //Add Object Here
         Defense defense;
         SPS sps;
-        
+
         Thread alarmThread;
 
         public Main()

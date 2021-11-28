@@ -87,6 +87,7 @@ namespace Superhero_Containment_Main
             this.def_tur_w2_verBarBack.SuspendLayout();
             this.groupBox_defw1.SuspendLayout();
             this.def_tur_w1_verBarBack.SuspendLayout();
+            this.phantomGroup.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.SPS_module_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -385,13 +386,6 @@ namespace Superhero_Containment_Main
             // 
             // DNFGroup
             // 
-            this.DNFGroup.Controls.Add(this.label11);
-            this.DNFGroup.Controls.Add(this.label10);
-            this.DNFGroup.Controls.Add(this.label9);
-            this.DNFGroup.Controls.Add(this.label8);
-            this.DNFGroup.Controls.Add(this.label7);
-            this.DNFGroup.Controls.Add(this.button3);
-            this.DNFGroup.Controls.Add(this.button2);
             this.DNFGroup.Location = new System.Drawing.Point(12, 454);
             this.DNFGroup.Name = "DNFGroup";
             this.DNFGroup.Size = new System.Drawing.Size(920, 215);
@@ -408,7 +402,6 @@ namespace Superhero_Containment_Main
             this.controlPanel.Name = "controlPanel";
             this.controlPanel.Size = new System.Drawing.Size(310, 100);
             this.controlPanel.TabIndex = 4;
-            this.controlPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.controlPanel_Paint);
             // 
             // configButton
             // 
@@ -561,22 +554,13 @@ namespace Superhero_Containment_Main
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickFrequency = 5;
             // 
-            // panel1
+            // pictureBox1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(885, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12, 12);
-            this.panel1.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(822, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Status: ON";
+            this.pictureBox1.Location = new System.Drawing.Point(409, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -608,6 +592,7 @@ namespace Superhero_Containment_Main
             this.groupBox_defw1.ResumeLayout(false);
             this.groupBox_defw1.PerformLayout();
             this.def_tur_w1_verBarBack.ResumeLayout(false);
+            this.phantomGroup.ResumeLayout(false);
             this.controlPanel.ResumeLayout(false);
             this.controlPanel.PerformLayout();
             this.SPS_module_box.ResumeLayout(false);
@@ -668,6 +653,7 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
