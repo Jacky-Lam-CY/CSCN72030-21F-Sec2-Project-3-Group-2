@@ -529,6 +529,7 @@ namespace Superhero_Containment_Main
             {
                 label29.Text = "Open";
                 DoorsNF.isOpen = true;
+                defense.alert.alarm.triggerAlarm();
             }
         }
 

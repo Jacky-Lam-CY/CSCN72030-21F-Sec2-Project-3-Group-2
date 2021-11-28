@@ -340,11 +340,38 @@ namespace Superhero_Containment_Main
         private void timer1_Tick(object sender, EventArgs e)
         {
             string getValue = "";
-          
+            double checkAlarm;
 
             DNF.runFloors(ref getValue);
 
+            checkAlarm = Convert.ToDouble(getValue);
+
             label17.Text = getValue;
+
+            if(DNF.flagVal == DNF.flagLight)
+            {
+                if( checkAlarm < DNF.flagVal)
+                {
+                    defense.alert.alarm.triggerAlarm();
+                }
+                
+            }
+            else if (DNF.flagVal == DNF.flagAverage)
+            {
+                if (checkAlarm < DNF.flagVal)
+                {
+                    defense.alert.alarm.triggerAlarm();
+                }
+                
+            }
+            else if (DNF.flagVal == DNF.flagHeavy)
+            {
+                if (checkAlarm < DNF.flagVal)
+                {
+                    defense.alert.alarm.triggerAlarm();
+                }
+               
+            }
         }
     }
 }

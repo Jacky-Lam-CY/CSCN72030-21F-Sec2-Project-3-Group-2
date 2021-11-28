@@ -100,6 +100,12 @@ namespace Superhero_Containment_Main
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.SPS_module_box = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.tk_last_lbl = new System.Windows.Forms.Label();
+            this.tk_undetected_lbl = new System.Windows.Forms.Label();
+            this.tk_detected_lbl3 = new System.Windows.Forms.Label();
+            this.tk_detected_lbl2 = new System.Windows.Forms.Label();
+            this.tk_detected_lbl1 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tk_status = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -122,12 +128,6 @@ namespace Superhero_Containment_Main
             this.sps_module_status = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label27 = new System.Windows.Forms.Label();
-            this.tk_detected_lbl1 = new System.Windows.Forms.Label();
-            this.tk_detected_lbl2 = new System.Windows.Forms.Label();
-            this.tk_detected_lbl3 = new System.Windows.Forms.Label();
-            this.tk_undetected_lbl = new System.Windows.Forms.Label();
-            this.tk_last_lbl = new System.Windows.Forms.Label();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -838,6 +838,71 @@ namespace Superhero_Containment_Main
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Telekinesis Stick";
             // 
+            // tk_last_lbl
+            // 
+            this.tk_last_lbl.AutoSize = true;
+            this.tk_last_lbl.Location = new System.Drawing.Point(116, 144);
+            this.tk_last_lbl.Name = "tk_last_lbl";
+            this.tk_last_lbl.Size = new System.Drawing.Size(33, 13);
+            this.tk_last_lbl.TabIndex = 13;
+            this.tk_last_lbl.Text = "None";
+            // 
+            // tk_undetected_lbl
+            // 
+            this.tk_undetected_lbl.AutoSize = true;
+            this.tk_undetected_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tk_undetected_lbl.Location = new System.Drawing.Point(48, 71);
+            this.tk_undetected_lbl.Name = "tk_undetected_lbl";
+            this.tk_undetected_lbl.Size = new System.Drawing.Size(133, 15);
+            this.tk_undetected_lbl.TabIndex = 12;
+            this.tk_undetected_lbl.Text = "No Activity Detected";
+            this.tk_undetected_lbl.Visible = false;
+            // 
+            // tk_detected_lbl3
+            // 
+            this.tk_detected_lbl3.AutoSize = true;
+            this.tk_detected_lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tk_detected_lbl3.ForeColor = System.Drawing.Color.Firebrick;
+            this.tk_detected_lbl3.Location = new System.Drawing.Point(95, 81);
+            this.tk_detected_lbl3.Name = "tk_detected_lbl3";
+            this.tk_detected_lbl3.Size = new System.Drawing.Size(86, 25);
+            this.tk_detected_lbl3.TabIndex = 11;
+            this.tk_detected_lbl3.Text = "Cell 13";
+            this.tk_detected_lbl3.Visible = false;
+            // 
+            // tk_detected_lbl2
+            // 
+            this.tk_detected_lbl2.AutoSize = true;
+            this.tk_detected_lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tk_detected_lbl2.ForeColor = System.Drawing.Color.Firebrick;
+            this.tk_detected_lbl2.Location = new System.Drawing.Point(27, 86);
+            this.tk_detected_lbl2.Name = "tk_detected_lbl2";
+            this.tk_detected_lbl2.Size = new System.Drawing.Size(66, 15);
+            this.tk_detected_lbl2.TabIndex = 10;
+            this.tk_detected_lbl2.Text = "Location:";
+            this.tk_detected_lbl2.Visible = false;
+            // 
+            // tk_detected_lbl1
+            // 
+            this.tk_detected_lbl1.AutoSize = true;
+            this.tk_detected_lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tk_detected_lbl1.ForeColor = System.Drawing.Color.Firebrick;
+            this.tk_detected_lbl1.Location = new System.Drawing.Point(23, 58);
+            this.tk_detected_lbl1.Name = "tk_detected_lbl1";
+            this.tk_detected_lbl1.Size = new System.Drawing.Size(206, 16);
+            this.tk_detected_lbl1.TabIndex = 9;
+            this.tk_detected_lbl1.Text = "Telekinetic Activity Detected";
+            this.tk_detected_lbl1.Visible = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(23, 144);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(84, 13);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Last Poked Cell:";
+            // 
             // tk_status
             // 
             this.tk_status.BackColor = System.Drawing.Color.Gray;
@@ -1047,71 +1112,6 @@ namespace Superhero_Containment_Main
             this.timer1.Enabled = true;
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(23, 144);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(84, 13);
-            this.label27.TabIndex = 8;
-            this.label27.Text = "Last Poked Cell:";
-            // 
-            // tk_detected_lbl1
-            // 
-            this.tk_detected_lbl1.AutoSize = true;
-            this.tk_detected_lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tk_detected_lbl1.ForeColor = System.Drawing.Color.Firebrick;
-            this.tk_detected_lbl1.Location = new System.Drawing.Point(23, 58);
-            this.tk_detected_lbl1.Name = "tk_detected_lbl1";
-            this.tk_detected_lbl1.Size = new System.Drawing.Size(205, 16);
-            this.tk_detected_lbl1.TabIndex = 9;
-            this.tk_detected_lbl1.Text = "Telekinetic Activity Detected";
-            this.tk_detected_lbl1.Visible = false;
-            // 
-            // tk_detected_lbl2
-            // 
-            this.tk_detected_lbl2.AutoSize = true;
-            this.tk_detected_lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tk_detected_lbl2.ForeColor = System.Drawing.Color.Firebrick;
-            this.tk_detected_lbl2.Location = new System.Drawing.Point(27, 86);
-            this.tk_detected_lbl2.Name = "tk_detected_lbl2";
-            this.tk_detected_lbl2.Size = new System.Drawing.Size(66, 15);
-            this.tk_detected_lbl2.TabIndex = 10;
-            this.tk_detected_lbl2.Text = "Location:";
-            this.tk_detected_lbl2.Visible = false;
-            // 
-            // tk_detected_lbl3
-            // 
-            this.tk_detected_lbl3.AutoSize = true;
-            this.tk_detected_lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tk_detected_lbl3.ForeColor = System.Drawing.Color.Firebrick;
-            this.tk_detected_lbl3.Location = new System.Drawing.Point(95, 81);
-            this.tk_detected_lbl3.Name = "tk_detected_lbl3";
-            this.tk_detected_lbl3.Size = new System.Drawing.Size(86, 25);
-            this.tk_detected_lbl3.TabIndex = 11;
-            this.tk_detected_lbl3.Text = "Cell 13";
-            this.tk_detected_lbl3.Visible = false;
-            // 
-            // tk_undetected_lbl
-            // 
-            this.tk_undetected_lbl.AutoSize = true;
-            this.tk_undetected_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tk_undetected_lbl.Location = new System.Drawing.Point(48, 71);
-            this.tk_undetected_lbl.Name = "tk_undetected_lbl";
-            this.tk_undetected_lbl.Size = new System.Drawing.Size(133, 15);
-            this.tk_undetected_lbl.TabIndex = 12;
-            this.tk_undetected_lbl.Text = "No Activity Detected";
-            this.tk_undetected_lbl.Visible = false;
-            // 
-            // tk_last_lbl
-            // 
-            this.tk_last_lbl.AutoSize = true;
-            this.tk_last_lbl.Location = new System.Drawing.Point(116, 144);
-            this.tk_last_lbl.Name = "tk_last_lbl";
-            this.tk_last_lbl.Size = new System.Drawing.Size(33, 13);
-            this.tk_last_lbl.TabIndex = 13;
-            this.tk_last_lbl.Text = "None";
             // 
             // Main
             // 
