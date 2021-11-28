@@ -584,6 +584,11 @@ namespace Superhero_Containment_Main
             defense.turret.primary.setDurabilityThresholdValue(trackBar_def_w1_dt.Value);
             defense.turret.secondary.setDurabilityThresholdValue(trackBar_def_w2_dt.Value);
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
         //--------------------End--------------------
     }
 }

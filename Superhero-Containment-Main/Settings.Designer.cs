@@ -71,6 +71,7 @@ namespace Superhero_Containment_Main
             this.TK_Enabled_button = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.strength_box = new System.Windows.Forms.GroupBox();
+            this.str_percent_lbl = new System.Windows.Forms.Label();
             this.sps_autoset_btn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -91,9 +92,6 @@ namespace Superhero_Containment_Main
             this.SPS_Enabled_Button = new System.Windows.Forms.RadioButton();
             this.tabPage_DNF = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.trackBar6 = new System.Windows.Forms.TrackBar();
@@ -125,7 +123,15 @@ namespace Superhero_Containment_Main
             this.def_on = new System.Windows.Forms.RadioButton();
             this.cancelButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
-            this.str_percent_lbl = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.appControl.SuspendLayout();
             this.tabPage_phantom.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -157,6 +163,7 @@ namespace Superhero_Containment_Main
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w2_dt)).BeginInit();
             this.def_w1_group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w1_dt)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -688,6 +695,15 @@ namespace Superhero_Containment_Main
             this.strength_box.TabStop = false;
             this.strength_box.Text = "Super-Strength Nullifier";
             // 
+            // str_percent_lbl
+            // 
+            this.str_percent_lbl.AutoSize = true;
+            this.str_percent_lbl.Location = new System.Drawing.Point(258, 79);
+            this.str_percent_lbl.Name = "str_percent_lbl";
+            this.str_percent_lbl.Size = new System.Drawing.Size(23, 13);
+            this.str_percent_lbl.TabIndex = 10;
+            this.str_percent_lbl.Text = "0%";
+            // 
             // sps_autoset_btn
             // 
             this.sps_autoset_btn.Location = new System.Drawing.Point(356, 74);
@@ -892,6 +908,7 @@ namespace Superhero_Containment_Main
             // 
             // tabPage_DNF
             // 
+            this.tabPage_DNF.Controls.Add(this.groupBox7);
             this.tabPage_DNF.Controls.Add(this.groupBox6);
             this.tabPage_DNF.Controls.Add(this.groupBox5);
             this.tabPage_DNF.Location = new System.Drawing.Point(4, 22);
@@ -904,48 +921,17 @@ namespace Superhero_Containment_Main
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.radioButton11);
-            this.groupBox6.Controls.Add(this.radioButton10);
-            this.groupBox6.Controls.Add(this.radioButton9);
+            this.groupBox6.Controls.Add(this.label27);
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.button4);
+            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.button2);
             this.groupBox6.Location = new System.Drawing.Point(11, 234);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(451, 162);
+            this.groupBox6.Size = new System.Drawing.Size(181, 162);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Floor Sensor Sensitivity";
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(6, 97);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(56, 17);
-            this.radioButton11.TabIndex = 2;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Heavy";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(6, 65);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(65, 17);
-            this.radioButton10.TabIndex = 1;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Average";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(6, 33);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(48, 17);
-            this.radioButton9.TabIndex = 0;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Light";
-            this.radioButton9.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -1292,14 +1278,90 @@ namespace Superhero_Containment_Main
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
-            // str_percent_lbl
+            // button2
             // 
-            this.str_percent_lbl.AutoSize = true;
-            this.str_percent_lbl.Location = new System.Drawing.Point(258, 79);
-            this.str_percent_lbl.Name = "str_percent_lbl";
-            this.str_percent_lbl.Size = new System.Drawing.Size(23, 13);
-            this.str_percent_lbl.TabIndex = 10;
-            this.str_percent_lbl.Text = "0%";
+            this.button2.Location = new System.Drawing.Point(24, 66);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Light";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(24, 95);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 21);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Average";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(24, 122);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Heavy";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Current Sensitivity:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(106, 32);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(41, 13);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "Default";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.button5);
+            this.groupBox7.Controls.Add(this.label29);
+            this.groupBox7.Controls.Add(this.label28);
+            this.groupBox7.Location = new System.Drawing.Point(205, 234);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(251, 161);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Door Controls";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(24, 32);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(103, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Current Door Status:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(179, 32);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(41, 13);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Default";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(27, 104);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(193, 23);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Toggle Door Open/Closed";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -1363,6 +1425,8 @@ namespace Superhero_Containment_Main
             this.def_w1_group.ResumeLayout(false);
             this.def_w1_group.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w1_dt)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1455,9 +1519,6 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TrackBar trackBar6;
@@ -1466,5 +1527,14 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label str_percent_lbl;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
     }
 }

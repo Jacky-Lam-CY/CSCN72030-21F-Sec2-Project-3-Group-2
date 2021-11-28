@@ -78,7 +78,6 @@ namespace Superhero_Containment_Main
             this.button3 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -122,6 +121,8 @@ namespace Superhero_Containment_Main
             this.panel7 = new System.Windows.Forms.Panel();
             this.sps_module_status = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -579,10 +580,11 @@ namespace Superhero_Containment_Main
             // 
             // DNFGroup
             // 
+            this.DNFGroup.Controls.Add(this.label26);
+            this.DNFGroup.Controls.Add(this.label25);
             this.DNFGroup.Controls.Add(this.button3);
             this.DNFGroup.Controls.Add(this.label17);
             this.DNFGroup.Controls.Add(this.label16);
-            this.DNFGroup.Controls.Add(this.button2);
             this.DNFGroup.Controls.Add(this.label15);
             this.DNFGroup.Controls.Add(this.label14);
             this.DNFGroup.Controls.Add(this.label13);
@@ -621,15 +623,6 @@ namespace Superhero_Containment_Main
             this.label16.TabIndex = 5;
             this.label16.Text = "Floor Sensor Value:";
             this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(18, 80);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Toggle Door Open/Closed";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -1061,6 +1054,24 @@ namespace Superhero_Containment_Main
             this.label24.TabIndex = 2;
             this.label24.Text = "Status: ON";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(33, 96);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(80, 13);
+            this.label25.TabIndex = 8;
+            this.label25.Text = "Humidity Value:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(180, 96);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(41, 13);
+            this.label26.TabIndex = 9;
+            this.label26.Text = "Default";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1182,7 +1193,6 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -1214,6 +1224,8 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel sps_module_status;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
     }
 }
 

@@ -268,5 +268,10 @@ namespace Superhero_Containment_Main
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
