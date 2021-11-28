@@ -14,18 +14,17 @@ namespace Superhero_Containment_Main
     {
         //Add object here
         Defense defense;
-
         SPS sps;
-
         Phantom p = new Phantom();
         HeartOfPhantom HOP = new HeartOfPhantom();
         EyeOfPhantom EOP = new EyeOfPhantom();
         SoulOfPhantom SOP = new SoulOfPhantom();
         
         bool isChanged;
-        public Settings(ref Defense def)//Pass reference of your object
+        public Settings(ref Defense def, ref SPS s)//Pass reference of your object
         {
-            defense = def;          
+            defense = def;
+            sps = s;
             InitializeComponent();           
         }
 
@@ -34,7 +33,9 @@ namespace Superhero_Containment_Main
         {
             loadDefenseModuleSettings();
             loadPhantomModuleSettings();
+            loadSPSModuleSettings();
             isChanged = false;
+            applyButton.Enabled = false;
         }
         private void loadPhantomModuleSettings()
         {
@@ -88,6 +89,30 @@ namespace Superhero_Containment_Main
         private void loadSPSModuleSettings()
         {
             //Add Code Here
+            if (sps.getEnabled())
+            {
+                SPS_Enabled_Button.Checked = true;
+                SPS_Disabled_Button.Checked = false;
+
+                if (sps.speaker_object.getEnabled())
+                {
+                    Speaker_Enabled_button.Checked = true;
+                    Speaker_Disabled_button.Checked = false;
+                    speaker_box.Enabled = true;
+                }
+                if (sps.telekinesis_object.getEnabled())
+                {
+                    TK_Enabled_button.Checked = true;
+                    TK_Disabled_button.Checked = false;
+                    telekinesis_box.Enabled = true;
+                }
+                if (sps.strength_object.getEnabled())
+                {
+                    Strength_Enabled_Button.Checked = true;
+                    Strength_Disabled_Button.Checked = false;
+                    strength_box.Enabled = true;
+                }
+            }
         }
         private void loadDefenseModuleSettings()
         {
@@ -216,16 +241,10 @@ namespace Superhero_Containment_Main
 
         //--------------------SPS Module Code--------------------
         /**     Cole's SPS Module Code within our windows Form1.cs  **/
-
-        private void SPS_Container_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void Module_Enabled_button_Clicked(object sender, EventArgs e)
         {
-
-            //Update buttons
+            applyButton.Enabled = true;
+            isChanged = true;
             SPS_Enabled_Button.Checked = true;
             SPS_Disabled_Button.Checked = false;
             //Enable all components
@@ -246,10 +265,12 @@ namespace Superhero_Containment_Main
             }
 
 
+
         }
         private void Module_Disabled_button_Clicked(object sender, EventArgs e)
         {
-            //Update buttons
+            applyButton.Enabled = true;
+            isChanged = true;
             SPS_Disabled_Button.Checked = true;
             SPS_Enabled_Button.Checked = false;
 
@@ -271,18 +292,25 @@ namespace Superhero_Containment_Main
         }
         private void Strength_Enabled_Button_Clicked(object sender, EventArgs e)    //Strength Section
         {
-            //Update buttons
             Strength_Enabled_Button.Checked = true;
             Strength_Disabled_Button.Checked = false;
             foreach (Control c in strength_box.Controls)
             {
                 c.Enabled = true;
             }
-        }
+            applyButton.Enabled = true;
+            isChanged = true;
 
+        }
+        private void Str_Bar_Value_Changed(object sender, EventArgs e)
+        {
+            isChanged = true;
+            applyButton.Enabled = true;
+        }
         private void Strength_Disabled_Button_Clicked(object sender, EventArgs e)
         {
-            //Update buttons
+            applyButton.Enabled = true;
+            isChanged = true;
             SPS_Disabled_Button.Checked = true;
             SPS_Enabled_Button.Checked = false;
             foreach (Control c in strength_box.Controls)
@@ -293,26 +321,32 @@ namespace Superhero_Containment_Main
                     c.Enabled = false;
                 }
             }
-        }
 
+        }
+        private void Auto_Set_Button_Clicked(object sender, EventArgs e)
+        {
+            Strength_bar.Value = Convert.ToInt32((sps.strength_object.getTotalStrength() / 3000.00) * 100);
+            isChanged = true;
+            applyButton.Enabled = true;
+        }
         private void Speaker_Enabled_button_Clicked(object sender, EventArgs e) //Speaker Section
         {
-            //Update buttons
             Speaker_Enabled_button.Checked = true;
             Speaker_Disabled_button.Checked = false;
+            applyButton.Enabled = true;
+            isChanged = true;
             foreach (Control c in speaker_box.Controls)
             {
                 c.Enabled = true;
             }
-
-            Speaker speaker = new Speaker();
         }
 
         private void Speaker_Disabled_button_Clicked(object sender, EventArgs e)
         {
-            //Update buttons
             Speaker_Disabled_button.Checked = true;
             Speaker_Enabled_button.Checked = false;
+            applyButton.Enabled = true;
+            isChanged = true;
             foreach (Control c in speaker_box.Controls)
             {
                 if (c is RadioButton) { }
@@ -321,45 +355,46 @@ namespace Superhero_Containment_Main
                     c.Enabled = false;
                 }
             }
-        }
-        private void Volume_button_Click(object sender, EventArgs e)
-        {
-            sps.speaker_object.setVolume(volume_bar.Value);
-            Volume_Amount_lbl.Text = volume_bar.Value.ToString();
+
         }
 
         private void volume_bar_ValueChanged(object sender, EventArgs e)
         {
             Volume_slider_lbl.Text = volume_bar.Value.ToString();
+            applyButton.Enabled = true;
+            isChanged = true;
+
         }
         private void TK_Enabled_button_Clicked(object sender, EventArgs e)
         {
-            //Update buttons
             TK_Enabled_button.Checked = true;
             TK_Disabled_button.Checked = false;
+            applyButton.Enabled = true;
+            isChanged = true;
             foreach (Control c in telekinesis_box.Controls)
             {
                 c.Enabled = true;
             }
         }
-
         private void TK_Disabled_button_Clicked(object sender, EventArgs e)
         {
-            //Update buttons
-            TK_Disabled_button.Checked = true;
-            TK_Enabled_button.Checked = false;
-            foreach (Control c in telekinesis_box.Controls)
+            if (TK_Enabled_button.Checked)
             {
-                if (c is RadioButton) { }
-                else
+                TK_Disabled_button.Checked = true;
+                TK_Enabled_button.Checked = false;
+                applyButton.Enabled = true;
+                isChanged = true;
+                foreach (Control c in telekinesis_box.Controls)
                 {
-                    c.Enabled = false;
+                    if (c is RadioButton) { }
+                    else
+                    {
+                        c.Enabled = false;
+                    }
                 }
             }
+
         }
-
-        
-
         /**     SPS Module Form Code End        **/
 
         //--------------------DNF Module Code--------------------
@@ -479,7 +514,31 @@ namespace Superhero_Containment_Main
         }
         private void applySPSModuleSettingsChange()
         {
-            // Add Code Here
+            if (SPS_Enabled_Button.Checked)
+            {
+                sps.setEnabled(true);
+                if (Speaker_Enabled_button.Checked)
+                {
+                    sps.speaker_object.setEnabled(true);
+                    sps.speaker_object.setVolume(volume_bar.Value);
+                    Volume_Amount_lbl.Text = volume_bar.Value.ToString();
+
+                }
+                else { sps.speaker_object.setEnabled(false); }
+
+                if (Strength_Enabled_Button.Checked)
+                {
+                    sps.strength_object.setEnabled(true);
+                    sps.strength_object.setCurrentPower(Strength_bar.Value);
+
+                }
+                else { sps.strength_object.setEnabled(false); }
+                if (TK_Enabled_button.Checked)
+                {
+                    sps.telekinesis_object.setEnabled(true);
+                }
+                else { sps.telekinesis_object.setEnabled(false); }
+            }
         }
         private void applyDNFModuleSettingsChange()
         {

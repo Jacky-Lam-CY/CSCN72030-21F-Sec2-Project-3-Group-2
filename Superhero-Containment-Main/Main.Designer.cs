@@ -75,6 +75,14 @@ namespace Superhero_Containment_Main
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.DNFGroup = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.controlPanel = new System.Windows.Forms.Panel();
             this.configButton = new System.Windows.Forms.Button();
             this.date_time_label = new System.Windows.Forms.Label();
@@ -84,23 +92,36 @@ namespace Superhero_Containment_Main
             this.phantom_module_timer = new System.Windows.Forms.Timer(this.components);
             this.DNF_module_timer = new System.Windows.Forms.Timer(this.components);
             this.SPS_module_timer = new System.Windows.Forms.Timer(this.components);
-            this.SPS_module_box = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.SPS_module_box = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tk_status = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.strength_value_lbl = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lbl_str_percent_main = new System.Windows.Forms.Label();
+            this.str_status = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.str_panel = new System.Windows.Forms.Panel();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lbl_volume_main = new System.Windows.Forms.Label();
+            this.speaker_status = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.sps_module_status = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -117,8 +138,13 @@ namespace Superhero_Containment_Main
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.DNFGroup.SuspendLayout();
             this.controlPanel.SuspendLayout();
-            this.SPS_module_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.SPS_module_box.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // defenseGroup
@@ -568,6 +594,79 @@ namespace Superhero_Containment_Main
             this.DNFGroup.TabStop = false;
             this.DNFGroup.Text = "Doors and Floors Module";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(693, 77);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(188, 26);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Check Floor Sensor";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(815, 152);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(57, 13);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Sensor Off";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(699, 152);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(99, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Floor Sensor Value:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(18, 80);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(255, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Toggle Door Open/Closed";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(180, 153);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Default";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(33, 153);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 13);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Floor Sensor Sensitivity";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(180, 43);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Default";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(33, 43);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Door Status:";
+            // 
             // controlPanel
             // 
             this.controlPanel.Controls.Add(this.configButton);
@@ -637,36 +736,6 @@ namespace Superhero_Containment_Main
             this.SPS_module_timer.Interval = 1000;
             this.SPS_module_timer.Tick += new System.EventHandler(this.SPS_module_timer_Tick);
             // 
-            // SPS_module_box
-            // 
-            this.SPS_module_box.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.SPS_module_box.Controls.Add(this.panel1);
-            this.SPS_module_box.Controls.Add(this.label6);
-            this.SPS_module_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.SPS_module_box.Location = new System.Drawing.Point(12, 233);
-            this.SPS_module_box.Name = "SPS_module_box";
-            this.SPS_module_box.Size = new System.Drawing.Size(920, 215);
-            this.SPS_module_box.TabIndex = 5;
-            this.SPS_module_box.TabStop = false;
-            this.SPS_module_box.Text = "Superpower Suppression Module";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(885, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12, 12);
-            this.panel1.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(822, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Status: ON";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -729,78 +798,268 @@ namespace Superhero_Containment_Main
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickFrequency = 5;
             // 
-            // label12
+            // SPS_module_box
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(33, 43);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Door Status:";
+            this.SPS_module_box.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.SPS_module_box.Controls.Add(this.groupBox6);
+            this.SPS_module_box.Controls.Add(this.groupBox7);
+            this.SPS_module_box.Controls.Add(this.groupBox8);
+            this.SPS_module_box.Controls.Add(this.sps_module_status);
+            this.SPS_module_box.Controls.Add(this.label24);
+            this.SPS_module_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.SPS_module_box.Location = new System.Drawing.Point(12, 233);
+            this.SPS_module_box.Name = "SPS_module_box";
+            this.SPS_module_box.Size = new System.Drawing.Size(920, 215);
+            this.SPS_module_box.TabIndex = 6;
+            this.SPS_module_box.TabStop = false;
+            this.SPS_module_box.Text = "Superpower Suppression Module";
             // 
-            // label13
+            // groupBox6
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(180, 43);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Default";
+            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.tk_status);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.label18);
+            this.groupBox6.Location = new System.Drawing.Point(515, 19);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(244, 190);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Telekinesis Stick";
             // 
-            // label14
+            // comboBox1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(33, 153);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 13);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Floor Sensor Sensitivity";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.comboBox1.Location = new System.Drawing.Point(156, 123);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(41, 21);
+            this.comboBox1.TabIndex = 7;
             // 
-            // label15
+            // tk_status
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(180, 153);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Default";
+            this.tk_status.BackColor = System.Drawing.Color.Gray;
+            this.tk_status.Location = new System.Drawing.Point(216, 21);
+            this.tk_status.Name = "tk_status";
+            this.tk_status.Size = new System.Drawing.Size(12, 12);
+            this.tk_status.TabIndex = 5;
             // 
-            // button2
+            // label6
             // 
-            this.button2.Location = new System.Drawing.Point(18, 80);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Toggle Door Open/Closed";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(170, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Status:";
             // 
-            // label16
+            // label18
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(699, 152);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(99, 13);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Floor Sensor Value:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(15, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(35, 13);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "label4";
             // 
-            // label17
+            // groupBox7
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(815, 152);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(57, 13);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "Sensor Off";
+            this.groupBox7.Controls.Add(this.strength_value_lbl);
+            this.groupBox7.Controls.Add(this.label19);
+            this.groupBox7.Controls.Add(this.lbl_str_percent_main);
+            this.groupBox7.Controls.Add(this.str_status);
+            this.groupBox7.Controls.Add(this.label20);
+            this.groupBox7.Controls.Add(this.label21);
+            this.groupBox7.Controls.Add(this.panel9);
+            this.groupBox7.Location = new System.Drawing.Point(209, 19);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(302, 190);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Super-Strength Nullifier";
             // 
-            // button3
+            // strength_value_lbl
             // 
-            this.button3.Location = new System.Drawing.Point(693, 77);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 26);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Check Floor Sensor";
-            this.button3.UseVisualStyleBackColor = true;
+            this.strength_value_lbl.AutoSize = true;
+            this.strength_value_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.strength_value_lbl.Location = new System.Drawing.Point(134, 56);
+            this.strength_value_lbl.Name = "strength_value_lbl";
+            this.strength_value_lbl.Size = new System.Drawing.Size(56, 25);
+            this.strength_value_lbl.TabIndex = 9;
+            this.strength_value_lbl.Text = "0 kJ";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(16, 29);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(147, 13);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Live Hero Strength Readings:";
+            // 
+            // lbl_str_percent_main
+            // 
+            this.lbl_str_percent_main.AutoSize = true;
+            this.lbl_str_percent_main.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_str_percent_main.Location = new System.Drawing.Point(37, 123);
+            this.lbl_str_percent_main.Name = "lbl_str_percent_main";
+            this.lbl_str_percent_main.Size = new System.Drawing.Size(57, 33);
+            this.lbl_str_percent_main.TabIndex = 7;
+            this.lbl_str_percent_main.Text = "0%";
+            // 
+            // str_status
+            // 
+            this.str_status.BackColor = System.Drawing.Color.Gray;
+            this.str_status.Location = new System.Drawing.Point(268, 22);
+            this.str_status.Name = "str_status";
+            this.str_status.Size = new System.Drawing.Size(12, 12);
+            this.str_status.TabIndex = 5;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(222, 22);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(40, 13);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Status:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(16, 96);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(78, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Module Power:";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Gray;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.str_panel);
+            this.panel9.Location = new System.Drawing.Point(137, 116);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(141, 40);
+            this.panel9.TabIndex = 0;
+            // 
+            // str_panel
+            // 
+            this.str_panel.BackColor = System.Drawing.Color.White;
+            this.str_panel.Location = new System.Drawing.Point(1, 1);
+            this.str_panel.Margin = new System.Windows.Forms.Padding(2);
+            this.str_panel.Name = "str_panel";
+            this.str_panel.Size = new System.Drawing.Size(137, 36);
+            this.str_panel.TabIndex = 1;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.lbl_volume_main);
+            this.groupBox8.Controls.Add(this.speaker_status);
+            this.groupBox8.Controls.Add(this.label22);
+            this.groupBox8.Controls.Add(this.label23);
+            this.groupBox8.Controls.Add(this.panel6);
+            this.groupBox8.Location = new System.Drawing.Point(6, 19);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(182, 190);
+            this.groupBox8.TabIndex = 5;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Speaker Device";
+            // 
+            // lbl_volume_main
+            // 
+            this.lbl_volume_main.AutoSize = true;
+            this.lbl_volume_main.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_volume_main.Location = new System.Drawing.Point(32, 107);
+            this.lbl_volume_main.Name = "lbl_volume_main";
+            this.lbl_volume_main.Size = new System.Drawing.Size(57, 33);
+            this.lbl_volume_main.TabIndex = 6;
+            this.lbl_volume_main.Text = "0%";
+            // 
+            // speaker_status
+            // 
+            this.speaker_status.BackColor = System.Drawing.Color.Gray;
+            this.speaker_status.Location = new System.Drawing.Point(155, 22);
+            this.speaker_status.Name = "speaker_status";
+            this.speaker_status.Size = new System.Drawing.Size(12, 12);
+            this.speaker_status.TabIndex = 5;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(109, 22);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 13);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Status:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 57);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(82, 13);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Current Volume:";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Gray;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Location = new System.Drawing.Point(141, 74);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 100);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Location = new System.Drawing.Point(-1, 1);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(10, 96);
+            this.panel7.TabIndex = 1;
+            // 
+            // sps_module_status
+            // 
+            this.sps_module_status.BackColor = System.Drawing.Color.Gray;
+            this.sps_module_status.Location = new System.Drawing.Point(884, 19);
+            this.sps_module_status.Name = "sps_module_status";
+            this.sps_module_status.Size = new System.Drawing.Size(12, 12);
+            this.sps_module_status.TabIndex = 3;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(821, 19);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Status: ON";
             // 
             // Main
             // 
@@ -847,9 +1106,17 @@ namespace Superhero_Containment_Main
             this.DNFGroup.PerformLayout();
             this.controlPanel.ResumeLayout(false);
             this.controlPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.SPS_module_box.ResumeLayout(false);
             this.SPS_module_box.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -895,15 +1162,12 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Panel def_tur_w1_verBarFront;
         private System.Windows.Forms.Label def_tur_w2_label;
         private System.Windows.Forms.Label def_tur_w1_label;
-        private System.Windows.Forms.GroupBox SPS_module_box;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -926,6 +1190,30 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.GroupBox SPS_module_box;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel tk_status;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label strength_value_lbl;
+        private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.Label lbl_str_percent_main;
+        private System.Windows.Forms.Panel str_status;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel str_panel;
+        private System.Windows.Forms.GroupBox groupBox8;
+        public System.Windows.Forms.Label lbl_volume_main;
+        private System.Windows.Forms.Panel speaker_status;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel sps_module_status;
+        private System.Windows.Forms.Label label24;
     }
 }
 

@@ -8,9 +8,15 @@ namespace Superhero_Containment_Main
 {
     public class SPS
     {
-        const string TELEKINESIS_DATA_PATH = @"..\SPS_Files\telekinesis_data.txt";
-        const string STRENGTH_DATA_PATH = @"..\SPS_Files\strength_data.txt";
-        
+        private Boolean enabled = false;
+        public void setEnabled(Boolean value)
+        {
+            enabled = value;
+        }
+        public Boolean getEnabled()
+        {
+            return enabled;
+        }
         public Speaker speaker_object = new Speaker();
         public StrengthNullifier strength_object = new StrengthNullifier();
         public TelekinesisStick telekinesis_object = new TelekinesisStick();
@@ -18,6 +24,16 @@ namespace Superhero_Containment_Main
     public class Speaker
     {
         private int volume;
+        private Boolean enabled = false;
+        public void setEnabled(Boolean value)
+        {
+            enabled = value;
+
+        }
+        public Boolean getEnabled()
+        {
+            return enabled;
+        }
 
         public void setVolume(int volume)
         {
@@ -32,6 +48,7 @@ namespace Superhero_Containment_Main
     public class TelekinesisStick
     {
         private int selectedCell;
+        private int textFileIndex = 0;
         public void setSelectedCell(int cell)
         {
             this.selectedCell = cell;
@@ -40,14 +57,24 @@ namespace Superhero_Containment_Main
         {
             return this.selectedCell;
         }
+        private Boolean enabled = false;
+        public void setEnabled(Boolean value)
+        {
+            enabled = value;
+        }
+        public Boolean getEnabled()
+        {
+            return enabled;
+        }
         public void readTelekinesisData()
         {
-            string path = @"..\SPS_Files\telekinesis_data.txt";
+            string path = @"..\..\data\telekinesis_data.txt";
             string[] lines = System.IO.File.ReadAllLines(path);
-            foreach (string line in lines)
+            this.selectedCell = Convert.ToInt32(lines[this.textFileIndex]);
+            this.textFileIndex++;
+            if (this.textFileIndex == lines.Length - 1)
             {
-                // Use a tab to indent each line of the file.
-                Console.WriteLine("\t" + line);
+                this.textFileIndex = 0;
             }
 
         }
@@ -56,7 +83,16 @@ namespace Superhero_Containment_Main
     {
         private int totalStrength;
         private int currentPower;
-
+        private int textFileIndex = 0;
+        private Boolean enabled = false;
+        public void setEnabled(Boolean value)
+        {
+            enabled = value;
+        }
+        public Boolean getEnabled()
+        {
+            return enabled;
+        }
         public void setCurrentPower(int power)
         {
             this.currentPower = power;
@@ -71,13 +107,18 @@ namespace Superhero_Containment_Main
         }
         public void readStrengthData()
         {
-            string path = @"..\SPS_Files\strength_data.txt";
+            string path = @"..\..\data\strength_data.txt";
             string[] lines = System.IO.File.ReadAllLines(path);
-            foreach (string line in lines)
+            this.totalStrength = Convert.ToInt32(lines[this.textFileIndex]);
+            this.textFileIndex++;
+
+            if (this.textFileIndex == lines.Length - 1)
             {
-                // Use a tab to indent each line of the file.
-                Console.WriteLine("\t" + line);
+                this.textFileIndex = 0;
             }
+
+
+
 
         }
     }

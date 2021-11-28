@@ -71,8 +71,7 @@ namespace Superhero_Containment_Main
             this.TK_Enabled_button = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.strength_box = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.sps_autoset_btn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -83,7 +82,6 @@ namespace Superhero_Containment_Main
             this.Strength_bar = new System.Windows.Forms.TrackBar();
             this.speaker_box = new System.Windows.Forms.GroupBox();
             this.Volume_slider_lbl = new System.Windows.Forms.Label();
-            this.Volume_button = new System.Windows.Forms.Button();
             this.Volume_Amount_lbl = new System.Windows.Forms.Label();
             this.Speaker_Disabled_button = new System.Windows.Forms.RadioButton();
             this.Speaker_Enabled_button = new System.Windows.Forms.RadioButton();
@@ -92,6 +90,17 @@ namespace Superhero_Containment_Main
             this.SPS_Disabled_Button = new System.Windows.Forms.RadioButton();
             this.SPS_Enabled_Button = new System.Windows.Forms.RadioButton();
             this.tabPage_DNF = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.trackBar6 = new System.Windows.Forms.TrackBar();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabPage_defense = new System.Windows.Forms.TabPage();
             this.groupBox_defense = new System.Windows.Forms.GroupBox();
             this.def_alert_group = new System.Windows.Forms.GroupBox();
@@ -116,17 +125,6 @@ namespace Superhero_Containment_Main
             this.def_on = new System.Windows.Forms.RadioButton();
             this.cancelButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.trackBar6 = new System.Windows.Forms.TrackBar();
-            this.button1 = new System.Windows.Forms.Button();
             this.appControl.SuspendLayout();
             this.tabPage_phantom.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -146,6 +144,9 @@ namespace Superhero_Containment_Main
             this.speaker_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.volume_bar)).BeginInit();
             this.tabPage_DNF.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
             this.tabPage_defense.SuspendLayout();
             this.groupBox_defense.SuspendLayout();
             this.def_alert_group.SuspendLayout();
@@ -155,9 +156,6 @@ namespace Superhero_Containment_Main
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w2_dt)).BeginInit();
             this.def_w1_group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w1_dt)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -606,6 +604,7 @@ namespace Superhero_Containment_Main
             this.telekinesis_box.Controls.Add(this.TK_Disabled_button);
             this.telekinesis_box.Controls.Add(this.TK_Enabled_button);
             this.telekinesis_box.Controls.Add(this.comboBox1);
+            this.telekinesis_box.Enabled = false;
             this.telekinesis_box.Location = new System.Drawing.Point(6, 289);
             this.telekinesis_box.Name = "telekinesis_box";
             this.telekinesis_box.Size = new System.Drawing.Size(452, 99);
@@ -670,8 +669,7 @@ namespace Superhero_Containment_Main
             // 
             // strength_box
             // 
-            this.strength_box.Controls.Add(this.button3);
-            this.strength_box.Controls.Add(this.button2);
+            this.strength_box.Controls.Add(this.sps_autoset_btn);
             this.strength_box.Controls.Add(this.label7);
             this.strength_box.Controls.Add(this.label6);
             this.strength_box.Controls.Add(this.label8);
@@ -680,6 +678,7 @@ namespace Superhero_Containment_Main
             this.strength_box.Controls.Add(this.label9);
             this.strength_box.Controls.Add(this.label10);
             this.strength_box.Controls.Add(this.Strength_bar);
+            this.strength_box.Enabled = false;
             this.strength_box.Location = new System.Drawing.Point(6, 151);
             this.strength_box.Name = "strength_box";
             this.strength_box.Size = new System.Drawing.Size(452, 132);
@@ -687,33 +686,25 @@ namespace Superhero_Containment_Main
             this.strength_box.TabStop = false;
             this.strength_box.Text = "Super-Strength Nullifier";
             // 
-            // button3
+            // sps_autoset_btn
             // 
-            this.button3.Location = new System.Drawing.Point(371, 74);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(271, 74);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.sps_autoset_btn.Location = new System.Drawing.Point(271, 74);
+            this.sps_autoset_btn.Name = "sps_autoset_btn";
+            this.sps_autoset_btn.Size = new System.Drawing.Size(75, 23);
+            this.sps_autoset_btn.TabIndex = 9;
+            this.sps_autoset_btn.Text = "Auto-Set";
+            this.sps_autoset_btn.UseVisualStyleBackColor = true;
+            this.sps_autoset_btn.Click += new System.EventHandler(this.Auto_Set_Button_Clicked);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(185, 106);
+            this.label7.Location = new System.Drawing.Point(206, 106);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 8;
-            this.label7.Text = "10,000 GW";
+            this.label7.Text = "100%";
             // 
             // label6
             // 
@@ -721,9 +712,9 @@ namespace Superhero_Containment_Main
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 106);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(21, 13);
             this.label6.TabIndex = 7;
-            this.label6.Text = "0 GW";
+            this.label6.Text = "0%";
             // 
             // label8
             // 
@@ -780,24 +771,24 @@ namespace Superhero_Containment_Main
             // 
             // Strength_bar
             // 
-            this.Strength_bar.LargeChange = 50;
             this.Strength_bar.Location = new System.Drawing.Point(6, 74);
-            this.Strength_bar.Maximum = 10000;
+            this.Strength_bar.Maximum = 100;
             this.Strength_bar.Name = "Strength_bar";
             this.Strength_bar.Size = new System.Drawing.Size(233, 45);
             this.Strength_bar.SmallChange = 5;
             this.Strength_bar.TabIndex = 1;
-            this.Strength_bar.TickFrequency = 250;
+            this.Strength_bar.TickFrequency = 5;
+            this.Strength_bar.ValueChanged += new System.EventHandler(this.Str_Bar_Value_Changed);
             // 
             // speaker_box
             // 
             this.speaker_box.Controls.Add(this.Volume_slider_lbl);
-            this.speaker_box.Controls.Add(this.Volume_button);
             this.speaker_box.Controls.Add(this.Volume_Amount_lbl);
             this.speaker_box.Controls.Add(this.Speaker_Disabled_button);
             this.speaker_box.Controls.Add(this.Speaker_Enabled_button);
             this.speaker_box.Controls.Add(this.Current_Volume_text);
             this.speaker_box.Controls.Add(this.volume_bar);
+            this.speaker_box.Enabled = false;
             this.speaker_box.Location = new System.Drawing.Point(6, 42);
             this.speaker_box.Name = "speaker_box";
             this.speaker_box.Size = new System.Drawing.Size(452, 103);
@@ -814,16 +805,6 @@ namespace Superhero_Containment_Main
             this.Volume_slider_lbl.Size = new System.Drawing.Size(14, 15);
             this.Volume_slider_lbl.TabIndex = 10;
             this.Volume_slider_lbl.Text = "0";
-            // 
-            // Volume_button
-            // 
-            this.Volume_button.Location = new System.Drawing.Point(330, 47);
-            this.Volume_button.Name = "Volume_button";
-            this.Volume_button.Size = new System.Drawing.Size(57, 23);
-            this.Volume_button.TabIndex = 9;
-            this.Volume_button.Text = "Set";
-            this.Volume_button.UseVisualStyleBackColor = true;
-            this.Volume_button.Click += new System.EventHandler(this.Volume_button_Click);
             // 
             // Volume_Amount_lbl
             // 
@@ -918,6 +899,119 @@ namespace Superhero_Containment_Main
             this.tabPage_DNF.TabIndex = 2;
             this.tabPage_DNF.Text = "Doors and Floors Module";
             this.tabPage_DNF.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.radioButton11);
+            this.groupBox6.Controls.Add(this.radioButton10);
+            this.groupBox6.Controls.Add(this.radioButton9);
+            this.groupBox6.Location = new System.Drawing.Point(11, 234);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(451, 162);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Floor Sensor Sensitivity";
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(6, 97);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(56, 17);
+            this.radioButton11.TabIndex = 2;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "Heavy";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(6, 65);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(65, 17);
+            this.radioButton10.TabIndex = 1;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "Average";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(6, 33);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(48, 17);
+            this.radioButton9.TabIndex = 0;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "Light";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.trackBar6);
+            this.groupBox5.Controls.Add(this.label26);
+            this.groupBox5.Controls.Add(this.label25);
+            this.groupBox5.Controls.Add(this.label24);
+            this.groupBox5.Controls.Add(this.label23);
+            this.groupBox5.Location = new System.Drawing.Point(11, 13);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(452, 209);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Climate Settings";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(294, 152);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 25);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Update Humidity";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // trackBar6
+            // 
+            this.trackBar6.Location = new System.Drawing.Point(16, 81);
+            this.trackBar6.Maximum = 100;
+            this.trackBar6.Name = "trackBar6";
+            this.trackBar6.Size = new System.Drawing.Size(430, 45);
+            this.trackBar6.TabIndex = 4;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(174, 33);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(41, 13);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Default";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(174, 158);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(41, 13);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Default";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(72, 33);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(66, 13);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Slider Value:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(21, 158);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(117, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Current Humidity Value:";
             // 
             // tabPage_defense
             // 
@@ -1196,119 +1290,6 @@ namespace Superhero_Containment_Main
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Controls.Add(this.trackBar6);
-            this.groupBox5.Controls.Add(this.label26);
-            this.groupBox5.Controls.Add(this.label25);
-            this.groupBox5.Controls.Add(this.label24);
-            this.groupBox5.Controls.Add(this.label23);
-            this.groupBox5.Location = new System.Drawing.Point(11, 13);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(452, 209);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Climate Settings";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.radioButton11);
-            this.groupBox6.Controls.Add(this.radioButton10);
-            this.groupBox6.Controls.Add(this.radioButton9);
-            this.groupBox6.Location = new System.Drawing.Point(11, 234);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(451, 162);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Floor Sensor Sensitivity";
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(6, 33);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(48, 17);
-            this.radioButton9.TabIndex = 0;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Light";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(6, 65);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(65, 17);
-            this.radioButton10.TabIndex = 1;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Average";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(6, 97);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(56, 17);
-            this.radioButton11.TabIndex = 2;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Heavy";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(21, 158);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(117, 13);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Current Humidity Value:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(72, 33);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(66, 13);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "Slider Value:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(174, 158);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(41, 13);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Default";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(174, 33);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(41, 13);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "Default";
-            // 
-            // trackBar6
-            // 
-            this.trackBar6.Location = new System.Drawing.Point(16, 81);
-            this.trackBar6.Maximum = 100;
-            this.trackBar6.Name = "trackBar6";
-            this.trackBar6.Size = new System.Drawing.Size(430, 45);
-            this.trackBar6.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(294, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 25);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Update Humidity";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1351,6 +1332,11 @@ namespace Superhero_Containment_Main
             this.speaker_box.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.volume_bar)).EndInit();
             this.tabPage_DNF.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
             this.tabPage_defense.ResumeLayout(false);
             this.groupBox_defense.ResumeLayout(false);
             this.groupBox_defense.PerformLayout();
@@ -1366,11 +1352,6 @@ namespace Superhero_Containment_Main
             this.def_w1_group.ResumeLayout(false);
             this.def_w1_group.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w1_dt)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1411,15 +1392,13 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.RadioButton SPS_Enabled_Button;
         private System.Windows.Forms.GroupBox speaker_box;
         private System.Windows.Forms.Label Volume_slider_lbl;
-        private System.Windows.Forms.Button Volume_button;
         private System.Windows.Forms.Label Volume_Amount_lbl;
         private System.Windows.Forms.RadioButton Speaker_Disabled_button;
         private System.Windows.Forms.RadioButton Speaker_Enabled_button;
         private System.Windows.Forms.Label Current_Volume_text;
         private System.Windows.Forms.TrackBar volume_bar;
         private System.Windows.Forms.GroupBox strength_box;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button sps_autoset_btn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;

@@ -28,7 +28,7 @@ namespace Superhero_Containment_Main
         {
             //Initialize Object Here
             defense = new Defense();
-
+            sps = new SPS();
             alarmThread = new Thread(new ThreadStart(() => defense.alert.alarm.playSystemAlarm()));
             InitializeComponent();            
         }
@@ -154,8 +154,38 @@ namespace Superhero_Containment_Main
         //--------------------SPS Module Code--------------------
         private void SPS_module_timer_Tick(object sender, EventArgs e)
         {
-            //Add Code Here
+            if (sps.getEnabled())
+            {
+                sps_module_status.BackColor = Color.Lime;
+                if (sps.telekinesis_object.getEnabled())
+                {
+                    sps.telekinesis_object.readTelekinesisData();
+                    tk_status.BackColor = Color.Lime;
+                }
+                if (sps.strength_object.getEnabled())
+                {
+                    sps.strength_object.readStrengthData();
+                    str_status.BackColor = Color.Lime;
+                    this.strength_value_lbl.Text = sps.strength_object.getTotalStrength().ToString();
+                    this.lbl_str_percent_main.Text = sps.strength_object.getCurrentPower().ToString() + "%";
+                }
+                if (sps.speaker_object.getEnabled())
+                {
+                    speaker_status.BackColor = Color.Lime;
+                    this.lbl_volume_main.Text = sps.speaker_object.getVolume().ToString() + "%";
+
+                }
+            }
+            else
+            {
+                sps_module_status.BackColor = Color.Gray;
+                speaker_status.BackColor = Color.Gray;
+                str_status.BackColor = Color.Gray;
+                tk_status.BackColor = Color.Gray;
+            }
+
         }
+    
         //--------------------DNF Module Code--------------------
         private void DNF_module_timer_Tick(object sender, EventArgs e)
         {
@@ -223,7 +253,7 @@ namespace Superhero_Containment_Main
         //--------------------Control Button Code--------------------
         private void configButton_Click(object sender, EventArgs e)
         {
-            Settings setting = new Settings(ref defense);
+            Settings setting = new Settings(ref defense, ref sps);
 
             setting.ShowDialog();
         }
