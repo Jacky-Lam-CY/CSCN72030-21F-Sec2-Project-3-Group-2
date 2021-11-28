@@ -30,6 +30,7 @@ namespace Superhero_Containment_Main
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.defenseGroup = new System.Windows.Forms.GroupBox();
             this.alertGroup = new System.Windows.Forms.GroupBox();
             this.def_alert_StatusLight = new System.Windows.Forms.Panel();
@@ -59,6 +60,20 @@ namespace Superhero_Containment_Main
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.phantomGroup = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.DNFGroup = new System.Windows.Forms.GroupBox();
             this.controlPanel = new System.Windows.Forms.Panel();
             this.configButton = new System.Windows.Forms.Button();
@@ -78,7 +93,6 @@ namespace Superhero_Containment_Main
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -88,10 +102,14 @@ namespace Superhero_Containment_Main
             this.groupBox_defw1.SuspendLayout();
             this.def_tur_w1_verBarBack.SuspendLayout();
             this.phantomGroup.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.controlPanel.SuspendLayout();
             this.SPS_module_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // defenseGroup
@@ -303,7 +321,6 @@ namespace Superhero_Containment_Main
             this.def_tur_w2_verBarFront.Name = "def_tur_w2_verBarFront";
             this.def_tur_w2_verBarFront.Size = new System.Drawing.Size(21, 96);
             this.def_tur_w2_verBarFront.TabIndex = 1;
-            this.def_tur_w2_verBarFront.Paint += new System.Windows.Forms.PaintEventHandler(this.def_tur_w2_verBarFront_Paint);
             // 
             // groupBox_defw1
             // 
@@ -316,7 +333,6 @@ namespace Superhero_Containment_Main
             this.groupBox_defw1.TabIndex = 0;
             this.groupBox_defw1.TabStop = false;
             this.groupBox_defw1.Text = "Weapon: Primary";
-            this.groupBox_defw1.Enter += new System.EventHandler(this.groupBox_defw1_Enter);
             // 
             // def_tur_w1_label
             // 
@@ -345,7 +361,6 @@ namespace Superhero_Containment_Main
             this.def_tur_w1_verBarFront.Name = "def_tur_w1_verBarFront";
             this.def_tur_w1_verBarFront.Size = new System.Drawing.Size(21, 96);
             this.def_tur_w1_verBarFront.TabIndex = 1;
-            this.def_tur_w1_verBarFront.Paint += new System.Windows.Forms.PaintEventHandler(this.def_tur_w1_verBarFront_Paint);
             // 
             // def_StatusLight
             // 
@@ -376,13 +391,156 @@ namespace Superhero_Containment_Main
             // 
             // phantomGroup
             // 
-            this.phantomGroup.Controls.Add(this.pictureBox1);
+            this.phantomGroup.Controls.Add(this.groupBox5);
+            this.phantomGroup.Controls.Add(this.groupBox3);
+            this.phantomGroup.Controls.Add(this.groupBox2);
+            this.phantomGroup.Controls.Add(this.panel2);
+            this.phantomGroup.Controls.Add(this.label7);
             this.phantomGroup.Location = new System.Drawing.Point(12, 12);
             this.phantomGroup.Name = "phantomGroup";
             this.phantomGroup.Size = new System.Drawing.Size(920, 215);
             this.phantomGroup.TabIndex = 1;
             this.phantomGroup.TabStop = false;
             this.phantomGroup.Text = "Phantom Module";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Controls.Add(this.panel5);
+            this.groupBox5.Location = new System.Drawing.Point(632, 19);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox5.Size = new System.Drawing.Size(249, 81);
+            this.groupBox5.TabIndex = 11;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Soul of Phantom";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(67, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Status: ON";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Gray;
+            this.panel5.Location = new System.Drawing.Point(132, 26);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(14, 13);
+            this.panel5.TabIndex = 9;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.panel4);
+            this.groupBox3.Location = new System.Drawing.Point(374, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox3.Size = new System.Drawing.Size(249, 81);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Eye of Phantom";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(67, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Status: ON";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gray;
+            this.panel4.Location = new System.Drawing.Point(132, 26);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(15, 13);
+            this.panel4.TabIndex = 9;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.panel3);
+            this.groupBox2.Controls.Add(this.groupBox4);
+            this.groupBox2.Location = new System.Drawing.Point(108, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox2.Size = new System.Drawing.Size(249, 190);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Heart of Phantom";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(54, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Status: ON";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gray;
+            this.panel3.Location = new System.Drawing.Point(119, 26);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(14, 13);
+            this.panel3.TabIndex = 9;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.pictureBox2);
+            this.groupBox4.Location = new System.Drawing.Point(41, 57);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 3, 1, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(142, 127);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Camera";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(44, 140);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "label4";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(16, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(108, 102);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Location = new System.Drawing.Point(80, 31);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(13, 12);
+            this.panel2.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Status: ON";
             // 
             // DNFGroup
             // 
@@ -554,14 +712,6 @@ namespace Superhero_Containment_Main
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickFrequency = 5;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(409, 89);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,12 +743,21 @@ namespace Superhero_Containment_Main
             this.groupBox_defw1.PerformLayout();
             this.def_tur_w1_verBarBack.ResumeLayout(false);
             this.phantomGroup.ResumeLayout(false);
+            this.phantomGroup.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.controlPanel.ResumeLayout(false);
             this.controlPanel.PerformLayout();
             this.SPS_module_box.ResumeLayout(false);
             this.SPS_module_box.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -653,7 +812,20 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 

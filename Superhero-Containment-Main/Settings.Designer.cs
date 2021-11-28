@@ -482,7 +482,6 @@ namespace Superhero_Containment_Main
             this.volume_bar.SmallChange = 5;
             this.volume_bar.TabIndex = 2;
             this.volume_bar.TickFrequency = 5;
-            this.volume_bar.Scroll += new System.EventHandler(this.volume_bar_Scroll);
             this.volume_bar.ValueChanged += new System.EventHandler(this.volume_bar_ValueChanged);
             // 
             // SPS_Disabled_Button
@@ -812,7 +811,7 @@ namespace Superhero_Containment_Main
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phantom Module";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+
             // 
             // radioButton5
             // 
@@ -854,7 +853,6 @@ namespace Superhero_Containment_Main
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Heart of Phantom";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // radioButton1
             // 

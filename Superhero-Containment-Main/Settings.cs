@@ -136,15 +136,87 @@ namespace Superhero_Containment_Main
         }
 
         //--------------------Phantom Module Code--------------------
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            p.phantomStatus = 1;
+            applyButton.Enabled = true;
+        }
 
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            p.phantomStatus = 0;
+            applyButton.Enabled = true;
+        }
 
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            HOP.HOPstatus = 1;
+            applyButton.Enabled = true;
+        }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            HOP.HOPstatus = 0;
+            applyButton.Enabled = true;
+        }
 
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            EOP.EOPstatus = 1;
+            applyButton.Enabled = true;
+        }
 
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            EOP.EOPstatus = 0;
+            applyButton.Enabled = true;
+        }
+
+        private void radioButton8_CheckedChanged(object sender, EventArgs e)
+        {
+            SOP.SOPstatus = 1;
+            applyButton.Enabled = true;
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+            SOP.SOPstatus = 0;
+            applyButton.Enabled = true;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            HOP.HOPsensitivity = trackBar1.Value;
+            applyButton.Enabled = true;
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            EOP.EOPbrightness = trackBar2.Value;
+            applyButton.Enabled = true;
+        }
+
+        private void trackBar4_Scroll(object sender, EventArgs e)
+        {
+            EOP.EOPviewingAngle = trackBar4.Value;
+            applyButton.Enabled = true;
+        }
+
+        private void trackBar5_Scroll(object sender, EventArgs e)
+        {
+            EOP.EOPlight = trackBar5.Value;
+            applyButton.Enabled = true;
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            SOP.SOPcoveredArea = trackBar3.Value;
+            applyButton.Enabled = true;
+        }
 
         //--------------------SPS Module Code--------------------
         /**     Cole's SPS Module Code within our windows Form1.cs  **/
-        
+
         private void SPS_Container_Enter(object sender, EventArgs e)
         {
 
@@ -446,98 +518,5 @@ namespace Superhero_Containment_Main
             defense.turret.secondary.setDurabilityThresholdValue(trackBar_def_w2_dt.Value);
         }
         //--------------------End--------------------
-
-        private void volume_bar_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton6_CheckedChanged(object sender, EventArgs e)
-        {
-            p.phantomStatus = 1;
-            applyButton.Enabled = true;
-        }
-
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            p.phantomStatus = 0;
-            applyButton.Enabled = true;
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            HOP.HOPstatus = 1;
-            applyButton.Enabled = true;
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            HOP.HOPstatus = 0;
-            applyButton.Enabled = true;
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            EOP.EOPstatus = 1;
-            applyButton.Enabled = true;
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            EOP.EOPstatus = 0;
-            applyButton.Enabled = true;
-        }
-
-        private void radioButton8_CheckedChanged(object sender, EventArgs e)
-        {
-            SOP.SOPstatus = 1;
-            applyButton.Enabled = true;
-        }
-
-        private void radioButton7_CheckedChanged(object sender, EventArgs e)
-        {
-            SOP.SOPstatus = 0;
-            applyButton.Enabled = true;
-        }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            HOP.HOPsensitivity = trackBar1.Value;
-            applyButton.Enabled = true;
-        }
-
-        private void trackBar2_Scroll(object sender, EventArgs e)
-        {
-            EOP.EOPbrightness = trackBar2.Value;
-            applyButton.Enabled = true;
-        }
-
-        private void trackBar4_Scroll(object sender, EventArgs e)
-        {
-            EOP.EOPviewingAngle = trackBar4.Value;
-            applyButton.Enabled = true;
-        }
-
-        private void trackBar5_Scroll(object sender, EventArgs e)
-        {
-            EOP.EOPlight = trackBar5.Value;
-            applyButton.Enabled = true;
-        }
-
-        private void trackBar3_Scroll(object sender, EventArgs e)
-        {
-            SOP.SOPcoveredArea = trackBar3.Value;
-            applyButton.Enabled = true;
-        }
     }
 }

@@ -19,6 +19,11 @@ namespace Superhero_Containment_Main
 
         Thread alarmThread;
 
+        Phantom p = new Phantom();
+        HeartOfPhantom HOP = new HeartOfPhantom();
+        EyeOfPhantom EOP = new EyeOfPhantom();
+        SoulOfPhantom SOP = new SoulOfPhantom();
+
         public Main()
         {
             //Initialize Object Here
@@ -42,7 +47,44 @@ namespace Superhero_Containment_Main
         }
         private void initializePhantomModuleData()
         {
-            //Add code here
+            p.readPdata();
+            HOP.readHOPdata();
+            EOP.readEOPdata();
+            SOP.readSOPdata();
+            if (p.phantomStatus == 1)
+            {
+                panel2.BackColor = Color.Green;
+            }
+            else
+            {
+                panel2.BackColor = Color.IndianRed;
+            }
+            if (HOP.HOPstatus == 1)
+            {
+                panel3.BackColor = Color.Green;
+                pictureBox2.Visible = true;
+            }
+            else
+            {
+                panel3.BackColor = Color.IndianRed;
+                pictureBox2.Visible = false;
+            }
+            if (EOP.EOPstatus == 1)
+            {
+                panel4.BackColor = Color.Green;
+            }
+            else
+            {
+                panel4.BackColor = Color.IndianRed;
+            }
+            if (SOP.SOPstatus == 1)
+            {
+                panel5.BackColor = Color.Green;
+            }
+            else
+            {
+                panel5.BackColor = Color.IndianRed;
+            }
         }
         private void initializeSPSModuleData()
         {
@@ -70,7 +112,44 @@ namespace Superhero_Containment_Main
         //--------------------Phantom Module Code--------------------
         private void phantom_module_timer_Tick(object sender, EventArgs e)
         {
-            //Add Code Here
+            p.readPdata();
+            HOP.readHOPdata();
+            EOP.readEOPdata();
+            SOP.readSOPdata();
+            if (p.phantomStatus == 1)
+            {
+                panel2.BackColor = Color.Green;
+            }
+            else
+            {
+                panel2.BackColor = Color.IndianRed;
+            }
+            if (HOP.HOPstatus == 1)
+            {
+                panel3.BackColor = Color.Green;
+                pictureBox2.Visible = true;
+            }
+            else
+            {
+                panel3.BackColor = Color.IndianRed;
+                pictureBox2.Visible = false;
+            }
+            if (EOP.EOPstatus == 1)
+            {
+                panel4.BackColor = Color.Green;
+            }
+            else
+            {
+                panel4.BackColor = Color.IndianRed;
+            }
+            if (SOP.SOPstatus == 1)
+            {
+                panel5.BackColor = Color.Green;
+            }
+            else
+            {
+                panel5.BackColor = Color.IndianRed;
+            }
         }
         //--------------------SPS Module Code--------------------
         private void SPS_module_timer_Tick(object sender, EventArgs e)
@@ -153,21 +232,6 @@ namespace Superhero_Containment_Main
             defense.alert.alarm.toggleOff();
             defense.turret.saveDefenseConfig();
             Application.Exit();
-        }
-
-        private void groupBox_defw1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void def_tur_w2_verBarFront_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void def_tur_w1_verBarFront_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
