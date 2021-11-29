@@ -116,20 +116,16 @@ namespace Superhero_Containment_Main
             this.tabPage_defense = new System.Windows.Forms.TabPage();
             this.groupBox_defense = new System.Windows.Forms.GroupBox();
             this.def_alert_group = new System.Windows.Forms.GroupBox();
-            this.def_alert_alarm_group = new System.Windows.Forms.GroupBox();
-            this.def_alert_alarm_on = new System.Windows.Forms.CheckBox();
             this.def_alert_off = new System.Windows.Forms.RadioButton();
             this.def_alert_on = new System.Windows.Forms.RadioButton();
             this.def_tur_group = new System.Windows.Forms.GroupBox();
             this.def_tur_off = new System.Windows.Forms.RadioButton();
             this.def_tur_on = new System.Windows.Forms.RadioButton();
             this.def_w2_group = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label_def_w2_dt = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.trackBar_def_w2_dt = new System.Windows.Forms.TrackBar();
             this.def_w1_group = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.label_def_w1_dt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.trackBar_def_w1_dt = new System.Windows.Forms.TrackBar();
@@ -138,6 +134,14 @@ namespace Superhero_Containment_Main
             this.cancelButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
             this.SPS_live_updates = new System.Windows.Forms.Timer(this.components);
+            this.def_tur_w1_off = new System.Windows.Forms.RadioButton();
+            this.def_tur_w1_on = new System.Windows.Forms.RadioButton();
+            this.def_tur_w2_off = new System.Windows.Forms.RadioButton();
+            this.def_tur_w2_on = new System.Windows.Forms.RadioButton();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.appControl.SuspendLayout();
             this.tabPage_phantom.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -164,7 +168,6 @@ namespace Superhero_Containment_Main
             this.tabPage_defense.SuspendLayout();
             this.groupBox_defense.SuspendLayout();
             this.def_alert_group.SuspendLayout();
-            this.def_alert_alarm_group.SuspendLayout();
             this.def_tur_group.SuspendLayout();
             this.def_w2_group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_def_w2_dt)).BeginInit();
@@ -1166,7 +1169,6 @@ namespace Superhero_Containment_Main
             // 
             // def_alert_group
             // 
-            this.def_alert_group.Controls.Add(this.def_alert_alarm_group);
             this.def_alert_group.Controls.Add(this.def_alert_off);
             this.def_alert_group.Controls.Add(this.def_alert_on);
             this.def_alert_group.Location = new System.Drawing.Point(6, 321);
@@ -1175,28 +1177,6 @@ namespace Superhero_Containment_Main
             this.def_alert_group.TabIndex = 3;
             this.def_alert_group.TabStop = false;
             this.def_alert_group.Text = "Alert System";
-            // 
-            // def_alert_alarm_group
-            // 
-            this.def_alert_alarm_group.Controls.Add(this.def_alert_alarm_on);
-            this.def_alert_alarm_group.Location = new System.Drawing.Point(272, 19);
-            this.def_alert_alarm_group.Name = "def_alert_alarm_group";
-            this.def_alert_alarm_group.Size = new System.Drawing.Size(174, 42);
-            this.def_alert_alarm_group.TabIndex = 3;
-            this.def_alert_alarm_group.TabStop = false;
-            this.def_alert_alarm_group.Text = "Alarm";
-            // 
-            // def_alert_alarm_on
-            // 
-            this.def_alert_alarm_on.AutoSize = true;
-            this.def_alert_alarm_on.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.def_alert_alarm_on.Location = new System.Drawing.Point(6, 19);
-            this.def_alert_alarm_on.Name = "def_alert_alarm_on";
-            this.def_alert_alarm_on.Size = new System.Drawing.Size(88, 17);
-            this.def_alert_alarm_on.TabIndex = 2;
-            this.def_alert_alarm_on.Text = "Enable Alarm";
-            this.def_alert_alarm_on.UseVisualStyleBackColor = true;
-            this.def_alert_alarm_on.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // def_alert_off
             // 
@@ -1265,7 +1245,10 @@ namespace Superhero_Containment_Main
             // 
             // def_w2_group
             // 
-            this.def_w2_group.Controls.Add(this.checkBox2);
+            this.def_w2_group.Controls.Add(this.label34);
+            this.def_w2_group.Controls.Add(this.label35);
+            this.def_w2_group.Controls.Add(this.def_tur_w2_off);
+            this.def_w2_group.Controls.Add(this.def_tur_w2_on);
             this.def_w2_group.Controls.Add(this.label_def_w2_dt);
             this.def_w2_group.Controls.Add(this.label2);
             this.def_w2_group.Controls.Add(this.trackBar_def_w2_dt);
@@ -1275,17 +1258,6 @@ namespace Superhero_Containment_Main
             this.def_w2_group.TabIndex = 1;
             this.def_w2_group.TabStop = false;
             this.def_w2_group.Text = "Weapon: Secondary";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(118, 19);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(141, 17);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "Enable Durability Sensor";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // label_def_w2_dt
             // 
@@ -1318,7 +1290,10 @@ namespace Superhero_Containment_Main
             // 
             // def_w1_group
             // 
-            this.def_w1_group.Controls.Add(this.checkBox3);
+            this.def_w1_group.Controls.Add(this.label33);
+            this.def_w1_group.Controls.Add(this.label32);
+            this.def_w1_group.Controls.Add(this.def_tur_w1_off);
+            this.def_w1_group.Controls.Add(this.def_tur_w1_on);
             this.def_w1_group.Controls.Add(this.label_def_w1_dt);
             this.def_w1_group.Controls.Add(this.label1);
             this.def_w1_group.Controls.Add(this.trackBar_def_w1_dt);
@@ -1329,22 +1304,11 @@ namespace Superhero_Containment_Main
             this.def_w1_group.TabStop = false;
             this.def_w1_group.Text = "Weapon: Primary";
             // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(118, 83);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(141, 17);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Enable Durability Sensor";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
             // label_def_w1_dt
             // 
             this.label_def_w1_dt.AutoSize = true;
             this.label_def_w1_dt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_def_w1_dt.Location = new System.Drawing.Point(115, 16);
+            this.label_def_w1_dt.Location = new System.Drawing.Point(115, 39);
             this.label_def_w1_dt.Name = "label_def_w1_dt";
             this.label_def_w1_dt.Size = new System.Drawing.Size(35, 13);
             this.label_def_w1_dt.TabIndex = 2;
@@ -1354,7 +1318,7 @@ namespace Superhero_Containment_Main
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 1;
@@ -1362,7 +1326,7 @@ namespace Superhero_Containment_Main
             // 
             // trackBar_def_w1_dt
             // 
-            this.trackBar_def_w1_dt.Location = new System.Drawing.Point(118, 32);
+            this.trackBar_def_w1_dt.Location = new System.Drawing.Point(118, 55);
             this.trackBar_def_w1_dt.Maximum = 100;
             this.trackBar_def_w1_dt.Name = "trackBar_def_w1_dt";
             this.trackBar_def_w1_dt.Size = new System.Drawing.Size(209, 45);
@@ -1421,6 +1385,98 @@ namespace Superhero_Containment_Main
             this.SPS_live_updates.Interval = 1000;
             this.SPS_live_updates.Tick += new System.EventHandler(this.SPS_live_updates_Tick);
             // 
+            // def_tur_w1_off
+            // 
+            this.def_tur_w1_off.AutoSize = true;
+            this.def_tur_w1_off.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.def_tur_w1_off.Location = new System.Drawing.Point(84, 19);
+            this.def_tur_w1_off.Name = "def_tur_w1_off";
+            this.def_tur_w1_off.Size = new System.Drawing.Size(66, 17);
+            this.def_tur_w1_off.TabIndex = 5;
+            this.def_tur_w1_off.TabStop = true;
+            this.def_tur_w1_off.Text = "Disabled";
+            this.def_tur_w1_off.UseVisualStyleBackColor = true;
+            this.def_tur_w1_off.CheckedChanged += new System.EventHandler(this.def_tur_w1_off_CheckedChanged);
+            // 
+            // def_tur_w1_on
+            // 
+            this.def_tur_w1_on.AutoSize = true;
+            this.def_tur_w1_on.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.def_tur_w1_on.Location = new System.Drawing.Point(14, 19);
+            this.def_tur_w1_on.Name = "def_tur_w1_on";
+            this.def_tur_w1_on.Size = new System.Drawing.Size(64, 17);
+            this.def_tur_w1_on.TabIndex = 4;
+            this.def_tur_w1_on.TabStop = true;
+            this.def_tur_w1_on.Text = "Enabled";
+            this.def_tur_w1_on.UseVisualStyleBackColor = true;
+            this.def_tur_w1_on.CheckedChanged += new System.EventHandler(this.def_tur_w1_on_CheckedChanged);
+            // 
+            // def_tur_w2_off
+            // 
+            this.def_tur_w2_off.AutoSize = true;
+            this.def_tur_w2_off.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.def_tur_w2_off.Location = new System.Drawing.Point(84, 19);
+            this.def_tur_w2_off.Name = "def_tur_w2_off";
+            this.def_tur_w2_off.Size = new System.Drawing.Size(66, 17);
+            this.def_tur_w2_off.TabIndex = 5;
+            this.def_tur_w2_off.TabStop = true;
+            this.def_tur_w2_off.Text = "Disabled";
+            this.def_tur_w2_off.UseVisualStyleBackColor = true;
+            this.def_tur_w2_off.CheckedChanged += new System.EventHandler(this.def_tur_w2_off_CheckedChanged);
+            // 
+            // def_tur_w2_on
+            // 
+            this.def_tur_w2_on.AutoSize = true;
+            this.def_tur_w2_on.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.def_tur_w2_on.Location = new System.Drawing.Point(14, 19);
+            this.def_tur_w2_on.Name = "def_tur_w2_on";
+            this.def_tur_w2_on.Size = new System.Drawing.Size(64, 17);
+            this.def_tur_w2_on.TabIndex = 4;
+            this.def_tur_w2_on.TabStop = true;
+            this.def_tur_w2_on.Text = "Enabled";
+            this.def_tur_w2_on.UseVisualStyleBackColor = true;
+            this.def_tur_w2_on.CheckedChanged += new System.EventHandler(this.def_tur_w2_on_CheckedChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(118, 87);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(21, 13);
+            this.label32.TabIndex = 6;
+            this.label32.Text = "0%";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(290, 87);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(33, 13);
+            this.label33.TabIndex = 7;
+            this.label33.Text = "100%";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(290, 87);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(33, 13);
+            this.label34.TabIndex = 9;
+            this.label34.Text = "100%";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(116, 87);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(21, 13);
+            this.label35.TabIndex = 8;
+            this.label35.Text = "0%";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1475,8 +1531,6 @@ namespace Superhero_Containment_Main
             this.groupBox_defense.PerformLayout();
             this.def_alert_group.ResumeLayout(false);
             this.def_alert_group.PerformLayout();
-            this.def_alert_alarm_group.ResumeLayout(false);
-            this.def_alert_alarm_group.PerformLayout();
             this.def_tur_group.ResumeLayout(false);
             this.def_tur_group.PerformLayout();
             this.def_w2_group.ResumeLayout(false);
@@ -1506,7 +1560,6 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.GroupBox def_tur_group;
         private System.Windows.Forms.GroupBox def_w2_group;
         private System.Windows.Forms.GroupBox def_w1_group;
-        private System.Windows.Forms.CheckBox def_alert_alarm_on;
         private System.Windows.Forms.RadioButton def_alert_off;
         private System.Windows.Forms.RadioButton def_alert_on;
         private System.Windows.Forms.RadioButton def_tur_off;
@@ -1515,11 +1568,8 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.TrackBar trackBar_def_w2_dt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar trackBar_def_w1_dt;
-        private System.Windows.Forms.GroupBox def_alert_alarm_group;
         private System.Windows.Forms.Label label_def_w2_dt;
         private System.Windows.Forms.Label label_def_w1_dt;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.GroupBox SPS_module_box;
         private System.Windows.Forms.RadioButton SPS_Disabled_Button;
         private System.Windows.Forms.RadioButton SPS_Enabled_Button;
@@ -1599,5 +1649,13 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label tk_lastcell_settings_lbl;
         private System.Windows.Forms.Timer SPS_live_updates;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.RadioButton def_tur_w2_off;
+        private System.Windows.Forms.RadioButton def_tur_w2_on;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.RadioButton def_tur_w1_off;
+        private System.Windows.Forms.RadioButton def_tur_w1_on;
     }
 }

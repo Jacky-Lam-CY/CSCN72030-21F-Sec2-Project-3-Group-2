@@ -52,8 +52,11 @@ namespace Superhero_Containment_Main
         }
         public void operate()
         {
-            turret.operate();
-            alert.operate();
+            if (this.isActive)
+            {
+                turret.operate();
+                alert.operate();
+            }
         }
 
         public class Turret : Controller
@@ -99,8 +102,11 @@ namespace Superhero_Containment_Main
             }
             public void operate()
             {
-                primary.operate();
-                secondary.operate();
+                if (this.isActive)
+                {
+                    primary.operate();
+                    secondary.operate();
+                }
             }
             public class Weapon: Controller
             {
@@ -165,13 +171,7 @@ namespace Superhero_Containment_Main
                             durabilityValue--;
                         }
                     }
-                    else
-                    {
-                        if (durabilityValue > durabilityThresholdValue)//turns on when threshold is set to below current durability value
-                        {
-                            this.toggleOn();
-                        }
-                    }
+
                 }
                 public class DurabilitySensor : Controller//detects degrade
                 {                   

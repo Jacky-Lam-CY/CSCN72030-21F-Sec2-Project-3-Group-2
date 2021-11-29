@@ -34,7 +34,7 @@ namespace Superhero_Containment_Main
             this.defenseGroup = new System.Windows.Forms.GroupBox();
             this.alertGroup = new System.Windows.Forms.GroupBox();
             this.def_alert_StatusLight = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.def_alert_StatusLabel = new System.Windows.Forms.Label();
             this.def_alert_label5 = new System.Windows.Forms.Label();
             this.def_alert_label4 = new System.Windows.Forms.Label();
             this.def_alert_label3 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@ namespace Superhero_Containment_Main
             this.def_tur_w1_verBarBack = new System.Windows.Forms.Panel();
             this.def_tur_w1_verBarFront = new System.Windows.Forms.Panel();
             this.def_StatusLight = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.def_StatusLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.phantomGroup = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -128,6 +128,11 @@ namespace Superhero_Containment_Main
             this.sps_module_status = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.def_tur_StatusLabel = new System.Windows.Forms.Label();
+            this.def_tur_w1_StatusLabel = new System.Windows.Forms.Label();
+            this.def_tur_w1_StatusLight = new System.Windows.Forms.Panel();
+            this.def_tur_w2_StatusLabel = new System.Windows.Forms.Label();
+            this.def_tur_w2_StatusLight = new System.Windows.Forms.Panel();
             this.defenseGroup.SuspendLayout();
             this.alertGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -158,7 +163,7 @@ namespace Superhero_Containment_Main
             this.defenseGroup.Controls.Add(this.alertGroup);
             this.defenseGroup.Controls.Add(this.groupBox1);
             this.defenseGroup.Controls.Add(this.def_StatusLight);
-            this.defenseGroup.Controls.Add(this.label1);
+            this.defenseGroup.Controls.Add(this.def_StatusLabel);
             this.defenseGroup.Location = new System.Drawing.Point(942, 12);
             this.defenseGroup.Name = "defenseGroup";
             this.defenseGroup.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -170,7 +175,7 @@ namespace Superhero_Containment_Main
             // alertGroup
             // 
             this.alertGroup.Controls.Add(this.def_alert_StatusLight);
-            this.alertGroup.Controls.Add(this.label2);
+            this.alertGroup.Controls.Add(this.def_alert_StatusLabel);
             this.alertGroup.Controls.Add(this.def_alert_label5);
             this.alertGroup.Controls.Add(this.def_alert_label4);
             this.alertGroup.Controls.Add(this.def_alert_label3);
@@ -187,64 +192,64 @@ namespace Superhero_Containment_Main
             // def_alert_StatusLight
             // 
             this.def_alert_StatusLight.BackColor = System.Drawing.Color.Gray;
-            this.def_alert_StatusLight.Location = new System.Drawing.Point(263, 28);
+            this.def_alert_StatusLight.Location = new System.Drawing.Point(282, 19);
             this.def_alert_StatusLight.Name = "def_alert_StatusLight";
             this.def_alert_StatusLight.Size = new System.Drawing.Size(12, 12);
             this.def_alert_StatusLight.TabIndex = 7;
             // 
-            // label2
+            // def_alert_StatusLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Status: ON";
+            this.def_alert_StatusLabel.AutoSize = true;
+            this.def_alert_StatusLabel.Location = new System.Drawing.Point(217, 18);
+            this.def_alert_StatusLabel.Name = "def_alert_StatusLabel";
+            this.def_alert_StatusLabel.Size = new System.Drawing.Size(63, 13);
+            this.def_alert_StatusLabel.TabIndex = 6;
+            this.def_alert_StatusLabel.Text = "Status: OFF";
             // 
             // def_alert_label5
             // 
             this.def_alert_label5.AutoSize = true;
             this.def_alert_label5.Location = new System.Drawing.Point(34, 138);
             this.def_alert_label5.Name = "def_alert_label5";
-            this.def_alert_label5.Size = new System.Drawing.Size(35, 13);
+            this.def_alert_label5.Size = new System.Drawing.Size(41, 13);
             this.def_alert_label5.TabIndex = 5;
-            this.def_alert_label5.Text = "label6";
+            this.def_alert_label5.Text = "Default";
             // 
             // def_alert_label4
             // 
             this.def_alert_label4.AutoSize = true;
             this.def_alert_label4.Location = new System.Drawing.Point(34, 117);
             this.def_alert_label4.Name = "def_alert_label4";
-            this.def_alert_label4.Size = new System.Drawing.Size(35, 13);
+            this.def_alert_label4.Size = new System.Drawing.Size(41, 13);
             this.def_alert_label4.TabIndex = 4;
-            this.def_alert_label4.Text = "label5";
+            this.def_alert_label4.Text = "Default";
             // 
             // def_alert_label3
             // 
             this.def_alert_label3.AutoSize = true;
             this.def_alert_label3.Location = new System.Drawing.Point(34, 96);
             this.def_alert_label3.Name = "def_alert_label3";
-            this.def_alert_label3.Size = new System.Drawing.Size(35, 13);
+            this.def_alert_label3.Size = new System.Drawing.Size(41, 13);
             this.def_alert_label3.TabIndex = 3;
-            this.def_alert_label3.Text = "label4";
+            this.def_alert_label3.Text = "Default";
             // 
             // def_alert_label2
             // 
             this.def_alert_label2.AutoSize = true;
             this.def_alert_label2.Location = new System.Drawing.Point(34, 75);
             this.def_alert_label2.Name = "def_alert_label2";
-            this.def_alert_label2.Size = new System.Drawing.Size(35, 13);
+            this.def_alert_label2.Size = new System.Drawing.Size(41, 13);
             this.def_alert_label2.TabIndex = 2;
-            this.def_alert_label2.Text = "label3";
+            this.def_alert_label2.Text = "Default";
             // 
             // def_alert_label1
             // 
             this.def_alert_label1.AutoSize = true;
             this.def_alert_label1.Location = new System.Drawing.Point(34, 54);
             this.def_alert_label1.Name = "def_alert_label1";
-            this.def_alert_label1.Size = new System.Drawing.Size(35, 13);
+            this.def_alert_label1.Size = new System.Drawing.Size(41, 13);
             this.def_alert_label1.TabIndex = 1;
-            this.def_alert_label1.Text = "label2";
+            this.def_alert_label1.Text = "Default";
             // 
             // tableLayoutPanel1
             // 
@@ -304,6 +309,7 @@ namespace Superhero_Containment_Main
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox1.Controls.Add(this.def_tur_StatusLabel);
             this.groupBox1.Controls.Add(this.def_tur_StatusLight);
             this.groupBox1.Controls.Add(this.groupBox_defw2);
             this.groupBox1.Controls.Add(this.groupBox_defw1);
@@ -325,6 +331,8 @@ namespace Superhero_Containment_Main
             // 
             // groupBox_defw2
             // 
+            this.groupBox_defw2.Controls.Add(this.def_tur_w2_StatusLabel);
+            this.groupBox_defw2.Controls.Add(this.def_tur_w2_StatusLight);
             this.groupBox_defw2.Controls.Add(this.def_tur_w2_label);
             this.groupBox_defw2.Controls.Add(this.def_tur_w2_verBarBack);
             this.groupBox_defw2.Location = new System.Drawing.Point(153, 44);
@@ -338,11 +346,11 @@ namespace Superhero_Containment_Main
             // def_tur_w2_label
             // 
             this.def_tur_w2_label.AutoSize = true;
-            this.def_tur_w2_label.Location = new System.Drawing.Point(54, 140);
+            this.def_tur_w2_label.Location = new System.Drawing.Point(6, 140);
             this.def_tur_w2_label.Name = "def_tur_w2_label";
-            this.def_tur_w2_label.Size = new System.Drawing.Size(35, 13);
+            this.def_tur_w2_label.Size = new System.Drawing.Size(90, 13);
             this.def_tur_w2_label.TabIndex = 2;
-            this.def_tur_w2_label.Text = "label5";
+            this.def_tur_w2_label.Text = "Durability: Default";
             // 
             // def_tur_w2_verBarBack
             // 
@@ -356,7 +364,7 @@ namespace Superhero_Containment_Main
             // 
             // def_tur_w2_verBarFront
             // 
-            this.def_tur_w2_verBarFront.BackColor = System.Drawing.Color.LightGreen;
+            this.def_tur_w2_verBarFront.BackColor = System.Drawing.Color.Gray;
             this.def_tur_w2_verBarFront.Location = new System.Drawing.Point(1, 1);
             this.def_tur_w2_verBarFront.Margin = new System.Windows.Forms.Padding(2);
             this.def_tur_w2_verBarFront.Name = "def_tur_w2_verBarFront";
@@ -365,6 +373,8 @@ namespace Superhero_Containment_Main
             // 
             // groupBox_defw1
             // 
+            this.groupBox_defw1.Controls.Add(this.def_tur_w1_StatusLabel);
+            this.groupBox_defw1.Controls.Add(this.def_tur_w1_StatusLight);
             this.groupBox_defw1.Controls.Add(this.def_tur_w1_label);
             this.groupBox_defw1.Controls.Add(this.def_tur_w1_verBarBack);
             this.groupBox_defw1.Location = new System.Drawing.Point(6, 44);
@@ -378,11 +388,11 @@ namespace Superhero_Containment_Main
             // def_tur_w1_label
             // 
             this.def_tur_w1_label.AutoSize = true;
-            this.def_tur_w1_label.Location = new System.Drawing.Point(44, 140);
+            this.def_tur_w1_label.Location = new System.Drawing.Point(6, 140);
             this.def_tur_w1_label.Name = "def_tur_w1_label";
-            this.def_tur_w1_label.Size = new System.Drawing.Size(35, 13);
+            this.def_tur_w1_label.Size = new System.Drawing.Size(90, 13);
             this.def_tur_w1_label.TabIndex = 1;
-            this.def_tur_w1_label.Text = "label4";
+            this.def_tur_w1_label.Text = "Durability: Default";
             // 
             // def_tur_w1_verBarBack
             // 
@@ -396,7 +406,7 @@ namespace Superhero_Containment_Main
             // 
             // def_tur_w1_verBarFront
             // 
-            this.def_tur_w1_verBarFront.BackColor = System.Drawing.Color.LightGreen;
+            this.def_tur_w1_verBarFront.BackColor = System.Drawing.Color.Gray;
             this.def_tur_w1_verBarFront.Location = new System.Drawing.Point(1, 1);
             this.def_tur_w1_verBarFront.Margin = new System.Windows.Forms.Padding(2);
             this.def_tur_w1_verBarFront.Name = "def_tur_w1_verBarFront";
@@ -406,19 +416,19 @@ namespace Superhero_Containment_Main
             // def_StatusLight
             // 
             this.def_StatusLight.BackColor = System.Drawing.Color.Gray;
-            this.def_StatusLight.Location = new System.Drawing.Point(269, 16);
+            this.def_StatusLight.Location = new System.Drawing.Point(287, 17);
             this.def_StatusLight.Name = "def_StatusLight";
             this.def_StatusLight.Size = new System.Drawing.Size(12, 12);
             this.def_StatusLight.TabIndex = 1;
             // 
-            // label1
+            // def_StatusLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(206, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Status: ON";
+            this.def_StatusLabel.AutoSize = true;
+            this.def_StatusLabel.Location = new System.Drawing.Point(224, 16);
+            this.def_StatusLabel.Name = "def_StatusLabel";
+            this.def_StatusLabel.Size = new System.Drawing.Size(63, 13);
+            this.def_StatusLabel.TabIndex = 0;
+            this.def_StatusLabel.Text = "Status: OFF";
             // 
             // label3
             // 
@@ -1113,6 +1123,49 @@ namespace Superhero_Containment_Main
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // def_tur_StatusLabel
+            // 
+            this.def_tur_StatusLabel.AutoSize = true;
+            this.def_tur_StatusLabel.Location = new System.Drawing.Point(216, 15);
+            this.def_tur_StatusLabel.Name = "def_tur_StatusLabel";
+            this.def_tur_StatusLabel.Size = new System.Drawing.Size(63, 13);
+            this.def_tur_StatusLabel.TabIndex = 4;
+            this.def_tur_StatusLabel.Text = "Status: OFF";
+            // 
+            // def_tur_w1_StatusLabel
+            // 
+            this.def_tur_w1_StatusLabel.AutoSize = true;
+            this.def_tur_w1_StatusLabel.Location = new System.Drawing.Point(6, 158);
+            this.def_tur_w1_StatusLabel.Name = "def_tur_w1_StatusLabel";
+            this.def_tur_w1_StatusLabel.Size = new System.Drawing.Size(63, 13);
+            this.def_tur_w1_StatusLabel.TabIndex = 10;
+            this.def_tur_w1_StatusLabel.Text = "Status: OFF";
+            // 
+            // def_tur_w1_StatusLight
+            // 
+            this.def_tur_w1_StatusLight.BackColor = System.Drawing.Color.Gray;
+            this.def_tur_w1_StatusLight.Location = new System.Drawing.Point(69, 159);
+            this.def_tur_w1_StatusLight.Name = "def_tur_w1_StatusLight";
+            this.def_tur_w1_StatusLight.Size = new System.Drawing.Size(12, 12);
+            this.def_tur_w1_StatusLight.TabIndex = 11;
+            // 
+            // def_tur_w2_StatusLabel
+            // 
+            this.def_tur_w2_StatusLabel.AutoSize = true;
+            this.def_tur_w2_StatusLabel.Location = new System.Drawing.Point(6, 158);
+            this.def_tur_w2_StatusLabel.Name = "def_tur_w2_StatusLabel";
+            this.def_tur_w2_StatusLabel.Size = new System.Drawing.Size(63, 13);
+            this.def_tur_w2_StatusLabel.TabIndex = 12;
+            this.def_tur_w2_StatusLabel.Text = "Status: OFF";
+            // 
+            // def_tur_w2_StatusLight
+            // 
+            this.def_tur_w2_StatusLight.BackColor = System.Drawing.Color.Gray;
+            this.def_tur_w2_StatusLight.Location = new System.Drawing.Point(69, 159);
+            this.def_tur_w2_StatusLight.Name = "def_tur_w2_StatusLight";
+            this.def_tur_w2_StatusLight.Size = new System.Drawing.Size(12, 12);
+            this.def_tur_w2_StatusLight.TabIndex = 13;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1137,6 +1190,7 @@ namespace Superhero_Containment_Main
             this.alertGroup.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox_defw2.ResumeLayout(false);
             this.groupBox_defw2.PerformLayout();
             this.def_tur_w2_verBarBack.ResumeLayout(false);
@@ -1185,7 +1239,7 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Button configButton;
         private System.Windows.Forms.Timer defense_module_timer;
         private System.Windows.Forms.Panel def_StatusLight;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label def_StatusLabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox alertGroup;
         private System.Windows.Forms.GroupBox groupBox_defw2;
@@ -1202,7 +1256,7 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label def_alert_label3;
         private System.Windows.Forms.Label def_alert_label2;
         private System.Windows.Forms.Panel def_alert_StatusLight;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label def_alert_StatusLabel;
         private System.Windows.Forms.Panel def_tur_StatusLight;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer phantom_module_timer;
@@ -1272,6 +1326,11 @@ namespace Superhero_Containment_Main
         private System.Windows.Forms.Label tk_detected_lbl2;
         private System.Windows.Forms.Label tk_detected_lbl1;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label def_tur_StatusLabel;
+        private System.Windows.Forms.Label def_tur_w2_StatusLabel;
+        private System.Windows.Forms.Panel def_tur_w2_StatusLight;
+        private System.Windows.Forms.Label def_tur_w1_StatusLabel;
+        private System.Windows.Forms.Panel def_tur_w1_StatusLight;
     }
 }
 

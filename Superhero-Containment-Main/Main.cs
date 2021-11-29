@@ -267,19 +267,26 @@ namespace Superhero_Containment_Main
         //--------------------Defense Module Code--------------------
         private void defense_module_timer_Tick(object sender, EventArgs e)//Monitor and Display of data
         {
-            defense_module_timer.Interval = 100;
+            //defense_module_timer.Interval = 100;
             defense.operate();
 
             def_StatusLight.BackColor = changeActiveStatusLight(defense.getActiveStatus());
+            def_StatusLabel.Text = defense.getActiveStatus() ? "Status: ON" : "Status: OFF";
             def_tur_StatusLight.BackColor = changeActiveStatusLight(defense.turret.getActiveStatus());
+            def_tur_StatusLabel.Text = defense.turret.getActiveStatus() ? "Status: ON" : "Status: OFF";
+            def_tur_w1_StatusLight.BackColor = changeActiveStatusLight(defense.turret.primary.getActiveStatus()); ;
+            def_tur_w1_StatusLabel.Text = defense.turret.primary.getActiveStatus() ? "Status: ON" : "Status: OFF";
+            def_tur_w2_StatusLight.BackColor = changeActiveStatusLight(defense.turret.secondary.getActiveStatus()); ;
+            def_tur_w2_StatusLabel.Text = defense.turret.secondary.getActiveStatus() ? "Status: ON" : "Status: OFF";
             def_alert_StatusLight.BackColor = changeActiveStatusLight(defense.alert.getActiveStatus());
+            def_alert_StatusLabel.Text = defense.alert.getActiveStatus() ? "Status: ON" : "Status: OFF";
 
             int primaryValue = defense.turret.primary.readSensor();
             int secondaryValue = defense.turret.secondary.readSensor();
             changeVerticalBarValue(ref def_tur_w1_verBarFront, defense.turret.primary.getActiveStatus() ? primaryValue : 0);
-            def_tur_w1_label.Text = primaryValue.ToString();
+            def_tur_w1_label.Text = "Durability: " + primaryValue.ToString();
             changeVerticalBarValue(ref def_tur_w2_verBarFront, defense.turret.secondary.getActiveStatus() ? secondaryValue : 0);            
-            def_tur_w2_label.Text = secondaryValue.ToString();
+            def_tur_w2_label.Text = "Durability: " + secondaryValue.ToString();
 
 
             int[] alertEvents = defense.alert.getEventsList();          
@@ -303,24 +310,46 @@ namespace Superhero_Containment_Main
         }
         private Color changeAlertEventStatusLight(int num)
         {
-            switch (num)
+            if (defense.alert.getActiveStatus())
             {
-                case 0:
-                    return Color.FromName("LightGreen");
-                case 1:
-                    return Color.FromArgb(255,227,2);
-                case 2:
-                    return Color.FromName("DarkRed");
-                case 3:
-                    return Color.FromName("DarkRed");
-                default:
-                    return Color.FromName("Gray");
+                switch (num)
+                {
+                    case 0:
+                        return Color.FromName("LightGreen");
+                    case 1:
+                        return Color.FromArgb(255, 227, 2);
+                    case 2:
+                        return Color.FromName("DarkRed");
+                    case 3:
+                        return Color.FromName("DarkRed");
+                    default:
+                        return Color.FromName("Gray");
+                }
             }
-
+            else
+            {
+                return Color.FromName("Gray");
+            }
         }
         private void changeVerticalBarValue(ref Panel p, int value)
         {
             p.Location = new Point(p.Location.X, 2+Math.Abs(value-100));
+            if (value == 0)
+            {
+                p.BackColor = Color.FromName("Gray");
+            }
+            else if (value > 50)
+            {
+                p.BackColor = Color.FromName("LightGreen");
+            }
+            else if (value <= 50 && value > 20)
+            {
+                p.BackColor = Color.FromArgb(255, 227, 2);
+            }
+            else if(value <= 20)
+            {
+                p.BackColor = Color.FromName("DarkRed");
+            }
         }
 
         //--------------------Control Button Code--------------------

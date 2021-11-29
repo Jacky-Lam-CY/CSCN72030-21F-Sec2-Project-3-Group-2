@@ -189,6 +189,28 @@ namespace Superhero_Containment_Main
                 def_tur_off.Checked = true;
             }
 
+            if (defense.turret.primary.getActiveStatus())
+            {
+                def_tur_w1_on.Checked = true;
+                trackBar_def_w1_dt.Enabled = true;
+            }
+            else
+            {
+                def_tur_w1_off.Checked = true;
+                trackBar_def_w1_dt.Enabled = false;
+            }
+
+            if (defense.turret.secondary.getActiveStatus())
+            {
+                def_tur_w2_on.Checked = true;
+                trackBar_def_w2_dt.Enabled = true;
+            }
+            else
+            {
+                def_tur_w2_off.Checked = true;
+                trackBar_def_w2_dt.Enabled = false;
+            }
+
             if (defense.alert.getActiveStatus())
             {
                 def_alert_on.Checked = true;
@@ -196,15 +218,6 @@ namespace Superhero_Containment_Main
             else
             {
                 def_alert_off.Checked = true;
-            }
-
-            if (defense.alert.alarm.getActiveStatus())
-            {
-                def_alert_alarm_on.Checked = true;
-            }
-            else
-            {
-                def_alert_alarm_on.Checked = false;
             }
 
             int def_w1_dt = defense.turret.primary.getDurabilityThresholdValue();
@@ -577,10 +590,6 @@ namespace Superhero_Containment_Main
                 isChanged = true;
             }
         }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
         private void trackBar_def_w1_dt_Scroll(object sender, EventArgs e)
         {
             label_def_w1_dt.Text = trackBar_def_w1_dt.Value.ToString();
@@ -597,7 +606,6 @@ namespace Superhero_Containment_Main
         {
             if (def_alert_on.Checked == false)
             {
-                def_alert_alarm_group.Enabled = false;
                 applyButton.Enabled = true;
                 isChanged = true;
             }
@@ -607,7 +615,46 @@ namespace Superhero_Containment_Main
         {
             if (def_alert_off.Checked == false)
             {
-                def_alert_alarm_group.Enabled = true;
+                applyButton.Enabled = true;
+                isChanged = true;
+            }
+        }
+
+        private void def_tur_w1_on_CheckedChanged(object sender, EventArgs e)
+        {
+            if (def_tur_w1_on.Checked == false)
+            {
+                trackBar_def_w1_dt.Enabled = false;
+                applyButton.Enabled = true;
+                isChanged = true;
+            }
+        }
+
+        private void def_tur_w1_off_CheckedChanged(object sender, EventArgs e)
+        {
+            if (def_tur_w1_off.Checked == false)
+            {
+                trackBar_def_w1_dt.Enabled = true;
+                applyButton.Enabled = true;
+                isChanged = true;
+            }
+        }
+
+        private void def_tur_w2_on_CheckedChanged(object sender, EventArgs e)
+        {
+            if (def_tur_w2_on.Checked == false)
+            {
+                trackBar_def_w2_dt.Enabled = false;
+                applyButton.Enabled = true;
+                isChanged = true;
+            }
+        }
+
+        private void def_tur_w2_off_CheckedChanged(object sender, EventArgs e)
+        {
+            if (def_tur_w2_off.Checked == false)
+            {
+                trackBar_def_w2_dt.Enabled = true;
                 applyButton.Enabled = true;
                 isChanged = true;
             }
@@ -712,6 +759,24 @@ namespace Superhero_Containment_Main
                 defense.turret.toggleOff();
             }
 
+            if (defense.turret.getActiveStatus() && def_tur_w1_on.Checked)
+            {
+                defense.turret.primary.toggleOn();
+            }
+            else
+            {
+                defense.turret.primary.toggleOff();
+            }
+
+            if (defense.turret.getActiveStatus() && def_tur_w2_on.Checked)
+            {
+                defense.turret.secondary.toggleOn();
+            }
+            else
+            {
+                defense.turret.secondary.toggleOff();
+            }
+
             if (defense.getActiveStatus() && def_alert_on.Checked)
             {
                 defense.alert.toggleOn();
@@ -725,7 +790,9 @@ namespace Superhero_Containment_Main
             defense.turret.secondary.setDurabilityThresholdValue(trackBar_def_w2_dt.Value);
         }
 
-        
+
+
+
 
 
 
